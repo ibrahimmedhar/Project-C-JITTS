@@ -61,7 +61,7 @@ namespace ProjectC_JITTS.Database
             try
             {
                 Connection.Open();
-                string oString = @"SELECT * from projectc.rooms WHERE room_number = @id AND room_location = @loc";
+                string oString = @"SELECT * from projectc.rooms WHERE room_number = @id AND room_location = @loc AND workplaces_available > 0";
                 MySqlCommand oCmd = new MySqlCommand(oString, Connection);
                 oCmd.Parameters.AddWithValue("@id", roomnumber);
                 oCmd.Parameters.AddWithValue("@loc", location);
