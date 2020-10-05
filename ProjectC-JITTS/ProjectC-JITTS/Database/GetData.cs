@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,12 @@ namespace ProjectC_JITTS.Database
 {
     class GetData : Connecter
     {
+        /// <summary>
+        /// Show room information from the database
+        /// </summary>
+        /// <returns>
+        /// Returns a List of Rooms
+        /// </returns>
         public List<Tuple<string, string, string, string>> ShowRooms()
         {
             List<Tuple<string, string, string, string>> roomList = new List<Tuple<string, string, string, string>>();
@@ -47,6 +54,38 @@ namespace ProjectC_JITTS.Database
             {
                 Connection.Close();
             }
+        }
+
+        public Tuple<string, string, string, string> ShowRoomByNoAndLoc(string roomnumber, string location)
+        {
+            try
+            {
+                Connection.Open();
+                string oString = @"SELECT * from projectc.rooms WHERE room_number = @id AND room_location = @loc";
+                MySqlCommand oCmd = new MySqlCommand(oString, Connection);
+                oCmd.Parameters.AddWithValue("@id", roomnumber);
+                oCmd.Parameters.AddWithValue("@loc", location);
+
+                using (MySqlDataReader getMovieInfo = oCmd.ExecuteReader())
+                {
+                    DataTable dataTable = new DataTable();
+
+                    dataTable.Load(getMovieInfo);
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        return Tuple.Create(row["room_number"].ToString(), row["workplaces"].ToString(), row["workplaces_available"].ToString(), row["room_location"].ToString());
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Tuple.Create("", "", "", "");
         }
     }
 }
