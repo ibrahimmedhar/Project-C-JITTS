@@ -32,6 +32,14 @@ namespace ProjectC_JITTS
 				roomLabel.Text += "\nWorkplaces Available " + room.Item3;
 				roomLabel.Text += "\nLocation: " + room.Item4;
 
+				ShowReservations SR = new ShowReservations(room.Item1, room.Item4);
+
+				roomLabel.Click += (s, p) => {
+					this.Hide();
+					SR.ShowDialog();
+					this.Close();
+				};
+
 				roomLabel.Location = new Point(0 + x, 120);
 				roomLabel.AutoSize = true;
 

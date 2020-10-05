@@ -1,6 +1,6 @@
 ﻿namespace ProjectC_JITTS
 {
-    partial class Home
+    partial class ShowReservations
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.back_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Home
+            // back_btn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1570, 925);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "Home";
-            this.Text = "Home";
+            this.back_btn.Location = new System.Drawing.Point(1339, 12);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(223, 51);
+            this.back_btn.TabIndex = 0;
+            this.back_btn.Text = "Back";
+            this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
+            // ShowReservations
+            // 
+            this.ClientSize = new System.Drawing.Size(1574, 929);
+            this.Controls.Add(this.back_btn);
+            this.Name = "ShowReservations";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button back_btn;
     }
 }
-
