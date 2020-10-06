@@ -17,7 +17,7 @@ namespace ProjectC_JITTS.Database
 		/// <param name="roomnumber">int of the roomnumber</param>
 		/// <param name="roomlocation">string of the roomlocation</param>
 		/// <param name="date">timedate converted to sql timedate</param>
-		public void ReserveWorkplace(string user, int roomnumber, string roomlocation, string date)
+		public void ReserveWorkplace(string user, int roomnumber, string roomlocation, string roomdate)
 		{
 			try
 			{
@@ -31,10 +31,14 @@ namespace ProjectC_JITTS.Database
 				MySqlParameter RoomLocationParam = new MySqlParameter("@RoomLocation", MySqlDbType.VarChar);
 				MySqlParameter DateParam = new MySqlParameter("@Date", MySqlDbType.DateTime);
 
+				// convert date to right sql format
+				DateTime date = Convert.ToDateTime(roomdate);
+				string formattedroomdate = date.ToString("yyyy-MM-dd HH:mm:ss.fff");
+
 				UserParam.Value = user;
 				RoomNumberParam.Value = roomnumber;
 				RoomLocationParam.Value = roomlocation;
-				DateParam.Value = date;
+				DateParam.Value = formattedroomdate;
 
 				command.Parameters.Add(UserParam);
 				command.Parameters.Add(RoomNumberParam);

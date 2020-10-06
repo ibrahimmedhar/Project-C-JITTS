@@ -105,11 +105,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShowReservations.cs">
+    <Compile Include="ReserveWorkplace.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShowReservations.Designer.cs">
-      <DependentUpon>ShowReservations.cs</DependentUpon>
+    <Compile Include="ReserveWorkplace.Designer.cs">
+      <DependentUpon>ReserveWorkplace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowDates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowDates.Designer.cs">
+      <DependentUpon>ShowDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowRooms.Designer.cs">
+      <DependentUpon>ShowRooms.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -123,8 +135,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ShowReservations.resx">
-      <DependentUpon>ShowReservations.cs</DependentUpon>
+    <EmbeddedResource Include="ShowRooms.resx">
+      <DependentUpon>ShowRooms.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

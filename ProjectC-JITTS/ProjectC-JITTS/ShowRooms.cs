@@ -11,44 +11,19 @@ using ProjectC_JITTS.Database;
 
 namespace ProjectC_JITTS
 {
-    public partial class Home : Form
+    public partial class ShowRooms : Form
     {
-        public Home()
-        {
-            InitializeComponent();
+		public ShowRooms(string roomdate, string location)
+		{
+			InitializeComponent();
 
 			GetData GD = new GetData();
+			AddData AD = new AddData();
 
+			this.AutoScroll = true;
 			int x = 20;
 
-			foreach (string location in GD.ShowLocations())
-			{
-				Label locationLabel = new Label();
-				locationLabel.Width = 150;
-				locationLabel.Height = 200;
-				locationLabel.BorderStyle = BorderStyle.FixedSingle;
-				locationLabel.Cursor = Cursors.Hand;
-				locationLabel.Text = "Location: " + location;
-				
-				ShowDates SD = new ShowDates(location);
-
-				locationLabel.Click += (s, p) => {
-					this.Hide();
-					SD.ShowDialog();
-					this.Close();
-				};
-
-				locationLabel.Location = new Point(0 + x, 120);
-				locationLabel.AutoSize = true;
-
-				this.Controls.Add(locationLabel);
-
-				x += 200;
-			}
-
-			/*int x = 20;
-
-			foreach (Tuple<string, string, string, string> room in GD.ShowRooms())
+			foreach (Tuple<string, string, string, string, string> room in GD.ShowRoomsByDateAndLoc(roomdate, location))
 			{
 				Label roomLabel = new Label();
 				roomLabel.Width = 150;
@@ -59,12 +34,13 @@ namespace ProjectC_JITTS
 				roomLabel.Text += "\nWorkplaces : " + room.Item2;
 				roomLabel.Text += "\nWorkplaces Available " + room.Item3;
 				roomLabel.Text += "\nLocation: " + room.Item4;
+				roomLabel.Text += "\nDate: " + room.Item5;
 
-				ShowRooms SR = new ShowRooms(room.Item1, room.Item4);
+				ReserveWorkplace RW = new ReserveWorkplace(room.Item5, room.Item1, room.Item4);
 
 				roomLabel.Click += (s, p) => {
 					this.Hide();
-					SR.ShowDialog();
+					RW.ShowDialog();
 					this.Close();
 				};
 
@@ -74,7 +50,16 @@ namespace ProjectC_JITTS
 				this.Controls.Add(roomLabel);
 
 				x += 200;
-			}*/
+			}
+
 		}
-	}
+
+		private void back_btn_Click(object sender, EventArgs e)
+        {
+			this.Hide();
+			Home form = new Home();
+			form.ShowDialog();
+			this.Close();
+		}
+    }
 }

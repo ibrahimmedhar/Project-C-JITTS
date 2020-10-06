@@ -32,4 +32,4 @@ C:\Users\timfeskens\source\repos\ProjectC-JITTS\ProjectC-JITTS\ProjectC-JITTS\bi
 C:\Users\timfeskens\source\repos\ProjectC-JITTS\ProjectC-JITTS\ProjectC-JITTS\obj\Debug\ProjectC-JITTS.csproj.CopyComplete
 C:\Users\timfeskens\source\repos\ProjectC-JITTS\ProjectC-JITTS\ProjectC-JITTS\obj\Debug\ProjectC-JITTS.exe
 C:\Users\timfeskens\source\repos\ProjectC-JITTS\ProjectC-JITTS\ProjectC-JITTS\obj\Debug\ProjectC-JITTS.pdb
-C:\Users\timfeskens\source\repos\ProjectC-JITTS\ProjectC-JITTS\ProjectC-JITTS\obj\Debug\ProjectC_JITTS.ShowReservations.resources
+C:\Users\timfeskens\source\repos\ProjectC-JITTS\ProjectC-JITTS\ProjectC-JITTS\obj\Debug\ProjectC_JITTS.ShowRooms.resources

@@ -1,6 +1,6 @@
 ﻿namespace ProjectC_JITTS
 {
-    partial class ShowReservations
+    partial class ShowRooms
     {
         /// <summary>
         /// Required designer variable.
