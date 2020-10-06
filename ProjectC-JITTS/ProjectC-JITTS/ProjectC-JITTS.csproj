@@ -135,6 +135,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReserveWorkplace.resx">
+      <DependentUpon>ReserveWorkplace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowDates.resx">
+      <DependentUpon>ShowDates.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShowRooms.resx">
       <DependentUpon>ShowRooms.cs</DependentUpon>
     </EmbeddedResource>

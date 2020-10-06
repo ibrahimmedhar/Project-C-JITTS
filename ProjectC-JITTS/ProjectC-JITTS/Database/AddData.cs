@@ -49,8 +49,8 @@ namespace ProjectC_JITTS.Database
 				int rowsUpdated = command.ExecuteNonQuery();
 				if (rowsUpdated != 0 )
 				{
+					// if succesful remove an available workplace
 					UD.RemoveWorkplace(roomnumber, roomlocation);
-
 				}
 			}
 			catch (MySqlException)
