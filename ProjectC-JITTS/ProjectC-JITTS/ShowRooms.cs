@@ -53,7 +53,6 @@ namespace ProjectC_JITTS
 			}
 
 		}
-
 		private void back_btn_Click(object sender, EventArgs e)
         {
 			this.Hide();
