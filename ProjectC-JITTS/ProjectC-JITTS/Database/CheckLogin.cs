@@ -9,7 +9,12 @@ namespace ProjectC_JITTS.Database
 {
     class CheckLogin : Connecter
     {
-
+        /// <summary>
+        /// Checks if user is registered in the database to be able to login
+        /// </summary>
+        /// <param name="username">string of the username/email that belongs to the user that wants to log in</param>
+        /// <param name="password">password for the account of the user</param>
+        /// <returns>If the user is able to login of not to log in</returns>
         public bool TryLogin(string username, string password)
         {
             bool loggedIn = false;

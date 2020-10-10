@@ -18,6 +18,10 @@ namespace ProjectC_JITTS
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Registeres the click of the button and logs the user in if the inputs are correct
+        /// </summary>
         private void btnLogin_Click(object sender, EventArgs e)
         {
             CheckLogin CL = new CheckLogin();
