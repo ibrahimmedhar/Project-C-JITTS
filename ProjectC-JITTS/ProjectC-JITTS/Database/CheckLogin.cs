@@ -20,6 +20,7 @@ namespace ProjectC_JITTS.Database
             bool loggedIn = false;
             try
             {
+                username = username.ToLower();
                 Connection.Open();
 
                 string query = "SELECT COUNT(*) as account FROM `projectc`.`accounts` WHERE email = '" + username + "' AND password = '" + password + "';";
