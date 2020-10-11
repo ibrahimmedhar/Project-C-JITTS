@@ -29,6 +29,8 @@ namespace ProjectC_JITTS
             if (CL.TryLogin(txtEmail.Text, txtPassword.Text))
             {
                 MessageBox.Show("U bent nu ingelogd");
+                Form home = new Home();
+                home.ShowDialog();
                 this.Close();
             }
             else

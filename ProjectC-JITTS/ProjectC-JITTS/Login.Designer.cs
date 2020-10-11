@@ -66,12 +66,13 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(26, 110);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(218, 20);
             this.txtPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(26, 147);
+            this.btnLogin.Location = new System.Drawing.Point(26, 149);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(218, 23);
             this.btnLogin.TabIndex = 4;

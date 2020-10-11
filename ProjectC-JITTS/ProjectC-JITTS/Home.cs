@@ -15,9 +15,6 @@ namespace ProjectC_JITTS
     {
         public Home()
         {
-			Form login = new Login();
-			login.ShowDialog();
-
             InitializeComponent();
 
 			GetData GD = new GetData();
