@@ -54,7 +54,6 @@ namespace ProjectC_JITTS
 				DialogResult result = MessageBox.Show("Reservation Completed", "Dialog Title", MessageBoxButtons.OK);
 				if (result == DialogResult.OK)
 				{
-
 					Program.SetMail();
 					Environment.Exit(0);
 				}
@@ -64,6 +63,5 @@ namespace ProjectC_JITTS
 
 			
 		}
-       
     }
 }
