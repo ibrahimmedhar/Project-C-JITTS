@@ -45,6 +45,22 @@ namespace ProjectC_JITTS
 
 				x += 200;
 			}
+
+			Button AdminButton = new Button();
+			AdminButton.Width = 150;
+			AdminButton.Height = 50;
+			AdminButton.Location = new Point(this.Width - 10 , 50 );
+			AdminButton.Text = "Admin";
+
+			AdminPage AP = new AdminPage();
+
+			AdminButton.Click += (s, p) => {
+				this.Hide();
+				AP.ShowDialog();
+				this.Close();
+			};
+
+			this.Controls.Add(AdminButton);
 		}
 	}
 }

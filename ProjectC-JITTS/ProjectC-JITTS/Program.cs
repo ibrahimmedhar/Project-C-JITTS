@@ -30,7 +30,7 @@ namespace ProjectC_JITTS
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
             mail.From = new MailAddress("projectcgroep1@gmail.com");
-            mail.To.Add("svensayed@gmail.com");
+            mail.To.Add("0967290@hr.nl");
             mail.Subject = "Confirmation of reservation";
             mail.Body = "Your reservation is complete";
            
