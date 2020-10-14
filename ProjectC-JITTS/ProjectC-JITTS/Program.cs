@@ -21,7 +21,7 @@ namespace ProjectC_JITTS
    {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            Application.Run(new Login());
         }
 
         //public static string server = "smtp.gmail.com";

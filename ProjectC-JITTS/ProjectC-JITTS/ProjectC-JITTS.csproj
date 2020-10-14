@@ -100,9 +100,16 @@
       <DependentUpon>AdminPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\AddData.cs" />
+    <Compile Include="Database\CheckLogin.cs" />
     <Compile Include="Database\Connecter.cs" />
     <Compile Include="Database\GetData.cs" />
     <Compile Include="Database\UpdateData.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
