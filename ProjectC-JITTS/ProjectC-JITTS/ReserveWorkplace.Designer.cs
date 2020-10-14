@@ -32,9 +32,10 @@
             // 
             // ReserveWorkplace
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1574, 929);
+            this.ClientSize = new System.Drawing.Size(787, 483);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ReserveWorkplace";
             this.Text = "ReserveWorkplace";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
