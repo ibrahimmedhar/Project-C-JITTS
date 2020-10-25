@@ -62,5 +62,41 @@ namespace ProjectC_JITTS.Database
 				Connection.Close();
 			}
 		}
+
+		public bool AddUser(string email, string password, int permissionlvl)
+        {
+			try
+			{
+				Connection.Open();
+
+				string stringToInsert = @"INSERT INTO accounts (email, password, permission_level) VALUES (@Email, @Password, @PermissionLevel)";
+
+				MySqlCommand command = new MySqlCommand(stringToInsert, Connection);
+				command.Parameters.AddWithValue("@Email", email);
+				command.Parameters.AddWithValue("@Password", password);
+				command.Parameters.AddWithValue("@PermissionLEvel", permissionlvl);
+
+				command.Prepare();
+
+				int rowsUpdated = command.ExecuteNonQuery();
+				if (rowsUpdated != 0)
+				{
+					// if succesful 
+					return true;
+				}
+                else
+                {
+					return false;
+                }
+			}
+			catch (MySqlException)
+			{
+				throw;
+			}
+			finally
+			{
+				Connection.Close();
+			}
+		}
 	}
 }

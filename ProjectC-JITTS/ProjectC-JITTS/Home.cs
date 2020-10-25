@@ -23,14 +23,16 @@ namespace ProjectC_JITTS
 
 			foreach (string location in GD.ShowLocations())
 			{
-				Label locationLabel = new Label();
-				locationLabel.Width = 150;
-				locationLabel.Height = 200;
-				locationLabel.BorderStyle = BorderStyle.FixedSingle;
-				locationLabel.Cursor = Cursors.Hand;
-				locationLabel.Text = "Location: " + location;
-				
-				ShowDates SD = new ShowDates(location);
+                Label locationLabel = new Label
+                {
+                    Width = 150,
+                    Height = 200,
+                    BorderStyle = BorderStyle.FixedSingle,
+                    Cursor = Cursors.Hand,
+                    Text = "Location: " + location
+                };
+
+                ShowDates SD = new ShowDates(location);
 
 				locationLabel.Click += (s, p) => {
 					this.Hide();
@@ -46,21 +48,26 @@ namespace ProjectC_JITTS
 				x += 200;
 			}
 
-			Button AdminButton = new Button();
-			AdminButton.Width = 150;
-			AdminButton.Height = 50;
-			AdminButton.Location = new Point(this.Width - 10 , 50 );
-			AdminButton.Text = "Admin";
+			// check if permission level is high enough
+			if (GetData.LoginInfo.PermissionLevel > 1)
+            {
+				Button AdminButton = new Button();
+				AdminButton.Width = 150;
+				AdminButton.Height = 50;
+				AdminButton.Location = new Point(this.Width - 10, 50);
+				AdminButton.Text = "Admin functies";
 
-			AdminPage AP = new AdminPage();
+				AdminPage AP = new AdminPage();
 
-			AdminButton.Click += (s, p) => {
-				this.Hide();
-				AP.ShowDialog();
-				this.Close();
-			};
+				AdminButton.Click += (s, p) => {
+					this.Hide();
+					AP.ShowDialog();
+					this.Close();
+				};
 
-			this.Controls.Add(AdminButton);
+				this.Controls.Add(AdminButton);
+			}
+			
 		}
 	}
 }

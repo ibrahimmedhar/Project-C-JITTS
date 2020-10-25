@@ -10,6 +10,15 @@ namespace ProjectC_JITTS.Database
 {
     class GetData : Connecter
     {
+        /// <summary>
+        /// importent class saved while the application is running!
+        /// </summary>
+        public static class LoginInfo
+        {
+            public static string UserID;
+            public static int PermissionLevel;
+        }
+
         public List<string> ShowLocations()
         {
             List<string> locationList = new List<string>();
@@ -202,6 +211,38 @@ namespace ProjectC_JITTS.Database
                 Connection.Close();
             }
             return Tuple.Create("", "", "", "","");
+        }
+
+        public Tuple<string,int> ShowAccountInfo(string email)
+        {
+            try
+            {
+                Connection.Open();
+                string oString = @"SELECT * from accounts WHERE email = @email";
+                MySqlCommand oCmd = new MySqlCommand(oString, Connection);
+
+                oCmd.Parameters.AddWithValue("@email", email);
+
+                using (MySqlDataReader getRoom = oCmd.ExecuteReader())
+                {
+                    DataTable dataTable = new DataTable();
+
+                    dataTable.Load(getRoom);
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        return Tuple.Create(row["email"].ToString(), Int32.Parse(row["permission_level"].ToString()));
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Tuple.Create("",0);
         }
     }
 }
