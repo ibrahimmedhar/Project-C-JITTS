@@ -14,7 +14,7 @@ namespace ProjectC_JITTS.Database
 		/// </summary>
 		/// <param name="roomnumber">int of the room number</param>
 		/// <param name="roomlocation">string of the room location</param>
-        public void RemoveWorkplace(int roomnumber, string roomlocation)
+        public bool RemoveWorkplace(int roomnumber, string roomlocation)
         {
 			try
 			{
@@ -36,8 +36,12 @@ namespace ProjectC_JITTS.Database
 				int rowsUpdated = command.ExecuteNonQuery();
 				if (rowsUpdated != 0)
 				{
-					// code when succesful
+					return true;
 				}
+				else
+                {
+					return false;
+                }
 			}
 			catch (MySqlException)
 			{

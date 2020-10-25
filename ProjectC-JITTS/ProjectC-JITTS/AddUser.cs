@@ -16,26 +16,6 @@ namespace ProjectC_JITTS
         public AddUser()
         {
             InitializeComponent();
-
-            /*
-            TextBox EmailAddress = new TextBox
-            {
-                Width = 100,
-                Location = new Point(20, 20),
-                Text = "eg. user@domain.com"
-            };
-
-            this.Controls.Add(EmailAddress);
-
-            TextBox Password = new TextBox
-            {
-                Width = 100,
-                Location = new Point(20, 40),
-                Text = "eg. secret123"
-            };
-
-            this.Controls.Add(Password);
-            */
         }
 
         private void btnSave_Click(object sender, EventArgs e)
