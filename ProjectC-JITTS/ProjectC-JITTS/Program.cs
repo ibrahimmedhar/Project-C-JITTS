@@ -7,6 +7,7 @@ using System.Net.Mail;
 using System.Runtime.Remoting.Messaging;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjectC_JITTS.Database;
 
 namespace ProjectC_JITTS
 {
@@ -27,12 +28,13 @@ namespace ProjectC_JITTS
         //public static string server = "smtp.gmail.com";
         public static void SetMail()
         {
+            string email = GetData.LoginInfo.UserID.ToString() ;
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
             mail.From = new MailAddress("projectcgroep1@gmail.com");
-            mail.To.Add("0967290@hr.nl");
+            mail.To.Add(GetData.LoginInfo.UserID);
             mail.Subject = "Confirmation of reservation";
-            mail.Body = "Your reservation is complete";
+            mail.Body = "Dear " + email +  ", your reservation is complete";
            
             SmtpServer.Port = 587;
             SmtpServer.Credentials = new System.Net.NetworkCredential("projectcgroep1@gmail.com", "projectc123");

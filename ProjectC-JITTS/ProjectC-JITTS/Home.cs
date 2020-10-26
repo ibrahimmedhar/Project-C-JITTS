@@ -35,9 +35,7 @@ namespace ProjectC_JITTS
                 ShowDates SD = new ShowDates(location);
 
 				locationLabel.Click += (s, p) => {
-					this.Hide();
 					SD.ShowDialog();
-					this.Close();
 				};
 
 				locationLabel.Location = new Point(0 + x, 120);
@@ -60,9 +58,7 @@ namespace ProjectC_JITTS
 				AdminPage AP = new AdminPage();
 
 				AdminButton.Click += (s, p) => {
-					this.Hide();
 					AP.ShowDialog();
-					this.Close();
 				};
 
 				this.Controls.Add(AdminButton);

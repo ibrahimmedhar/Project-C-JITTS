@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(1307, 1014);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(237, 87);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1574, 1129);
+            this.Controls.Add(this.btnBack);
             this.Name = "AdminPage";
             this.Text = "AdminPage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -43,5 +55,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnBack;
     }
 }

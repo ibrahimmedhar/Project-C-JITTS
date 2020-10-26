@@ -26,12 +26,16 @@ namespace ProjectC_JITTS
 			AddUser AU = new AddUser();
 
 			AddUserButton.Click += (s, p) => {
-				this.Hide();
 				AU.ShowDialog();
-				this.Close();
 			};
 
 			this.Controls.Add(AddUserButton);
 		}
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+			this.Hide();
+			this.Close();
+        }
     }
 }

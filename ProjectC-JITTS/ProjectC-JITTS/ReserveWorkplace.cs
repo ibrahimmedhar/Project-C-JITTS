@@ -56,7 +56,8 @@ namespace ProjectC_JITTS
 					if (result == DialogResult.OK)
 					{
 						Program.SetMail();
-						Environment.Exit(0);
+						this.Hide();
+						this.Close();
 					}
 				}
 				else
