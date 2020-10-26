@@ -56,8 +56,6 @@ namespace ProjectC_JITTS
 		private void back_btn_Click(object sender, EventArgs e)
         {
 			this.Hide();
-			Home form = new Home();
-			form.ShowDialog();
 			this.Close();
 		}
     }
