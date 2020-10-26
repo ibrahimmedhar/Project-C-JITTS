@@ -17,7 +17,7 @@ namespace ProjectC_JITTS.Database
 		/// <param name="roomnumber">int of the roomnumber</param>
 		/// <param name="roomlocation">string of the roomlocation</param>
 		/// <param name="date">timedate converted to sql timedate</param>
-		public void ReserveWorkplace(string user, int roomnumber, string roomlocation, string roomdate)
+		public bool ReserveWorkplace(string user, int roomnumber, string roomlocation, string roomdate)
 		{
 			try
 			{
@@ -50,8 +50,48 @@ namespace ProjectC_JITTS.Database
 				if (rowsUpdated != 0 )
 				{
 					// if succesful remove an available workplace
-					UD.RemoveWorkplace(roomnumber, roomlocation);
+					return UD.RemoveWorkplace(roomnumber, roomlocation);
 				}
+				else
+                {
+					return false;
+                }
+			}
+			catch (MySqlException)
+			{
+				throw;
+			}
+			finally
+			{
+				Connection.Close();
+			}
+		}
+
+		public bool AddUser(string email, string password, int permissionlvl)
+        {
+			try
+			{
+				Connection.Open();
+
+				string stringToInsert = @"INSERT INTO accounts (email, password, permission_level) VALUES (@Email, @Password, @PermissionLevel)";
+
+				MySqlCommand command = new MySqlCommand(stringToInsert, Connection);
+				command.Parameters.AddWithValue("@Email", email);
+				command.Parameters.AddWithValue("@Password", password);
+				command.Parameters.AddWithValue("@PermissionLEvel", permissionlvl);
+
+				command.Prepare();
+
+				int rowsUpdated = command.ExecuteNonQuery();
+				if (rowsUpdated != 0)
+				{
+					// if succesful 
+					return true;
+				}
+                else
+                {
+					return false;
+                }
 			}
 			catch (MySqlException)
 			{
