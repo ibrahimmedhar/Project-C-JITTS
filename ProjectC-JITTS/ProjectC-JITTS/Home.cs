@@ -32,9 +32,8 @@ namespace ProjectC_JITTS
                     Text = "Location: " + location
                 };
 
-                ShowDates SD = new ShowDates(location);
-
 				locationLabel.Click += (s, p) => {
+					ShowDates SD = new ShowDates(location);
 					SD.ShowDialog();
 				};
 
