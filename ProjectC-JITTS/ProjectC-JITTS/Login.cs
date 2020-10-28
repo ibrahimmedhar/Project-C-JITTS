@@ -25,9 +25,16 @@ namespace ProjectC_JITTS
         private void btnLogin_Click(object sender, EventArgs e)
         {
             CheckLogin CL = new CheckLogin();
+            GetData GD = new GetData();
 
             if (CL.TryLogin(txtEmail.Text, txtPassword.Text))
             {
+                // to add the UserID to the application
+                Tuple<string, int> accountInfo = GD.ShowAccountInfo(txtEmail.Text);
+
+                GetData.LoginInfo.UserID = accountInfo.Item1;
+                GetData.LoginInfo.PermissionLevel = accountInfo.Item2;
+
                 Form home = new Home();
                 home.ShowDialog();
                 this.Close();

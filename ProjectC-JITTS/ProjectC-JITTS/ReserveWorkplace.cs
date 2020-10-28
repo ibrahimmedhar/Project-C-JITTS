@@ -24,9 +24,7 @@ namespace ProjectC_JITTS
 		public ReserveWorkplace(string roomdate, string roomnumber, string roomloc)
         {
             InitializeComponent();
-			
-
-			InitializeComponent();
+			bool succesInsert;
 
 			GetData GD = new GetData();
 			AddData AD = new AddData();
@@ -50,13 +48,23 @@ namespace ProjectC_JITTS
 			ReserveButton.Click += (s, p) =>
 			{
 				// insert the reservation into the database using AddData
-				AD.ReserveWorkplace("Test Subject", Int32.Parse(roomInfo.Item1), roomInfo.Item4, roomInfo.Item5);
-				DialogResult result = MessageBox.Show("Reservation Completed", "Dialog Title", MessageBoxButtons.OK);
-				if (result == DialogResult.OK)
-				{
-					Program.SetMail();
-					Environment.Exit(0);
+				succesInsert = AD.ReserveWorkplace(GetData.LoginInfo.UserID, Int32.Parse(roomInfo.Item1), roomInfo.Item4, roomInfo.Item5);
+				
+				if (succesInsert)
+                {
+					DialogResult result = MessageBox.Show("Reservation Completed", "Dialog Title", MessageBoxButtons.OK);
+					if (result == DialogResult.OK)
+					{
+						Program.SetMail();
+						this.Hide();
+						this.Close();
+					}
 				}
+				else
+                {
+					MessageBox.Show("Mislukt");
+                }
+				
 			};
 
 				this.Controls.Add(ReserveButton);
