@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectC_JITTS.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,29 @@ namespace ProjectC_JITTS
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            CheckLogin CL = new CheckLogin();
+            GetData GD = new GetData();
+
+            if (CL.TryLogin(txtEmail.Text, txtPassword.Text))
+            {
+                // to add the UserID to the application
+                Tuple<string, int> accountInfo = GD.ShowAccountInfo(txtEmail.Text);
+
+                GetData.LoginInfo.UserID = accountInfo.Item1;
+                GetData.LoginInfo.PermissionLevel = accountInfo.Item2;
+
+                Form home = new Home();
+                home.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Onjuiste combinatie van Email en wachtwoord, probeer opnieuw");
+            }
         }
     }
 }

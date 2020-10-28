@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.alphaBlendTextBox2 = new ZBobb.AlphaBlendTextBox();
-            this.alphaBlendTextBox1 = new ZBobb.AlphaBlendTextBox();
             this.txtPassword = new Bunifu.Framework.UI.BunifuTextbox();
             this.btnLogin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtEmail = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.alphaBlendTextBox2 = new ZBobb.AlphaBlendTextBox();
+            this.alphaBlendTextBox1 = new ZBobb.AlphaBlendTextBox();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,47 +57,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(242, 450);
             this.panel1.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Controls.Add(this.alphaBlendTextBox2);
-            this.panel4.Controls.Add(this.alphaBlendTextBox1);
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(546, 429);
-            this.panel4.TabIndex = 3;
-            // 
-            // alphaBlendTextBox2
-            // 
-            this.alphaBlendTextBox2.BackAlpha = 0;
-            this.alphaBlendTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.alphaBlendTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.alphaBlendTextBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alphaBlendTextBox2.ForeColor = System.Drawing.SystemColors.Info;
-            this.alphaBlendTextBox2.Location = new System.Drawing.Point(10, 319);
-            this.alphaBlendTextBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.alphaBlendTextBox2.Multiline = true;
-            this.alphaBlendTextBox2.Name = "alphaBlendTextBox2";
-            this.alphaBlendTextBox2.Size = new System.Drawing.Size(488, 97);
-            this.alphaBlendTextBox2.TabIndex = 1;
-            this.alphaBlendTextBox2.Text = "This is the BLIS Digital reservation system. If you don\'t have an account yet, pl" +
-    "ease contact your supervisor or send a mail to exaple_blis@gmail.com.";
-            // 
-            // alphaBlendTextBox1
-            // 
-            this.alphaBlendTextBox1.BackAlpha = 0;
-            this.alphaBlendTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.alphaBlendTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.alphaBlendTextBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alphaBlendTextBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.alphaBlendTextBox1.Location = new System.Drawing.Point(10, 279);
-            this.alphaBlendTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.alphaBlendTextBox1.Name = "alphaBlendTextBox1";
-            this.alphaBlendTextBox1.Size = new System.Drawing.Size(284, 36);
-            this.alphaBlendTextBox1.TabIndex = 0;
-            this.alphaBlendTextBox1.Text = "Welcome to BLIS Digital";
             // 
             // txtPassword
             // 
@@ -145,6 +104,7 @@
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.Textcolor = System.Drawing.Color.White;
             this.btnLogin.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtEmail
             // 
@@ -183,6 +143,47 @@
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "catch the right wave with us!";
             // 
+            // panel4
+            // 
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Controls.Add(this.alphaBlendTextBox2);
+            this.panel4.Controls.Add(this.alphaBlendTextBox1);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(546, 429);
+            this.panel4.TabIndex = 3;
+            // 
+            // alphaBlendTextBox2
+            // 
+            this.alphaBlendTextBox2.BackAlpha = 0;
+            this.alphaBlendTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.alphaBlendTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.alphaBlendTextBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alphaBlendTextBox2.ForeColor = System.Drawing.SystemColors.Info;
+            this.alphaBlendTextBox2.Location = new System.Drawing.Point(10, 319);
+            this.alphaBlendTextBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.alphaBlendTextBox2.Multiline = true;
+            this.alphaBlendTextBox2.Name = "alphaBlendTextBox2";
+            this.alphaBlendTextBox2.Size = new System.Drawing.Size(488, 97);
+            this.alphaBlendTextBox2.TabIndex = 1;
+            this.alphaBlendTextBox2.Text = "This is the BLIS Digital reservation system. If you don\'t have an account yet, pl" +
+    "ease contact your supervisor or send a mail to exaple_blis@gmail.com.";
+            // 
+            // alphaBlendTextBox1
+            // 
+            this.alphaBlendTextBox1.BackAlpha = 0;
+            this.alphaBlendTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.alphaBlendTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.alphaBlendTextBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alphaBlendTextBox1.ForeColor = System.Drawing.SystemColors.Info;
+            this.alphaBlendTextBox1.Location = new System.Drawing.Point(10, 279);
+            this.alphaBlendTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.alphaBlendTextBox1.Name = "alphaBlendTextBox1";
+            this.alphaBlendTextBox1.Size = new System.Drawing.Size(284, 36);
+            this.alphaBlendTextBox1.TabIndex = 0;
+            this.alphaBlendTextBox1.Text = "Welcome to BLIS Digital";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,10 +194,10 @@
             this.Name = "Login";
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
