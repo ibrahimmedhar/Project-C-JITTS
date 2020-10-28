@@ -14,43 +14,34 @@ namespace ProjectC_JITTS.Database
 		/// Add reservation to reservation table in sql and call removeWorkplace to remove an available workplace
 		/// </summary>
 		/// <param name="user">string of the username</param>
+		/// <param name="room_id">id of the room with info</param>
 		/// <param name="roomnumber">int of the roomnumber</param>
 		/// <param name="roomlocation">string of the roomlocation</param>
 		/// <param name="date">timedate converted to sql timedate</param>
-		public bool ReserveWorkplace(string user, int roomnumber, string roomlocation, string roomdate)
+		public bool ReserveWorkplace(string user, int room_id, int roomnumber, string roomlocation, string roomdate)
 		{
 			try
 			{
 				Connection.Open();
 
-				string stringToInsert = @"INSERT INTO reservations (username, room_number, room_location, date) VALUES (@User, @RoomNumber, @RoomLocation, @Date)";
+				string stringToInsert = @"INSERT INTO reservations (username, room_id, date) VALUES (@User, @RoomID, @Date)";
 
 				MySqlCommand command = new MySqlCommand(stringToInsert, Connection);
-				MySqlParameter UserParam = new MySqlParameter("@User", MySqlDbType.VarChar);
-				MySqlParameter RoomNumberParam = new MySqlParameter("@RoomNumber", MySqlDbType.Int32);
-				MySqlParameter RoomLocationParam = new MySqlParameter("@RoomLocation", MySqlDbType.VarChar);
-				MySqlParameter DateParam = new MySqlParameter("@Date", MySqlDbType.DateTime);
 
 				// convert date to right sql format
 				DateTime date = Convert.ToDateTime(roomdate);
 				string formattedroomdate = date.ToString("yyyy-MM-dd HH:mm:ss.fff");
 
-				UserParam.Value = user;
-				RoomNumberParam.Value = roomnumber;
-				RoomLocationParam.Value = roomlocation;
-				DateParam.Value = formattedroomdate;
-
-				command.Parameters.Add(UserParam);
-				command.Parameters.Add(RoomNumberParam);
-				command.Parameters.Add(RoomLocationParam);
-				command.Parameters.Add(DateParam);
+				command.Parameters.AddWithValue("@User", user);
+				command.Parameters.AddWithValue("@RoomID", room_id);
+				command.Parameters.AddWithValue("@Date", formattedroomdate);
 
 				command.Prepare();
 				int rowsUpdated = command.ExecuteNonQuery();
 				if (rowsUpdated != 0 )
 				{
-					// if succesful remove an available workplace
-					return UD.RemoveWorkplace(roomnumber, roomlocation);
+					// if succesful remove an available workplace of a room with the right date
+					return UD.RemoveWorkplace(room_id, formattedroomdate);
 				}
 				else
                 {

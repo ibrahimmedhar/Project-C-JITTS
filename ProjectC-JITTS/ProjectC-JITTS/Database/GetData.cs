@@ -56,7 +56,7 @@ namespace ProjectC_JITTS.Database
             try
             {
                 Connection.Open();
-                string oString = @"SELECT DISTINCT date from rooms WHERE room_location = @loc";
+                string oString = @"SELECT DISTINCT workplaces.date FROM workplaces LEFT JOIN rooms ON rooms.room_id = workplaces.room_id WHERE rooms.room_location = @loc";
                 MySqlCommand oCmd = new MySqlCommand(oString, Connection);
                 oCmd.Parameters.AddWithValue("@loc", location);
 
@@ -94,7 +94,7 @@ namespace ProjectC_JITTS.Database
             try
             {
                 Connection.Open();
-                string oString = @"SELECT * from rooms";
+                string oString = @"SELECT rooms.*, workplaces.workplaces_available FROM rooms LEFT JOIN workplaces ON rooms.room_id=workplaces.room_id";
                 MySqlCommand command = new MySqlCommand(oString, Connection);
 
                 // creating the strings 
@@ -127,14 +127,14 @@ namespace ProjectC_JITTS.Database
             }
         }
 
-        public List<Tuple<string, string, string, string, string >> ShowRoomsByDateAndLoc(string roomdate, string location)
+        public List<Tuple<int, string, string, string, string, string, string >> ShowRoomsByDateAndLoc(string roomdate, string location)
         {
-            List<Tuple<string, string, string, string, string>> roomList = new List<Tuple<string, string, string, string, string>>();
+            List<Tuple<int, string, string, string, string, string, string>> roomList = new List<Tuple<int, string, string, string, string, string, string>>();
 
             try
             {
                 Connection.Open();
-                string oString = @"SELECT * from rooms WHERE date = @roomdate AND room_location = @loc AND workplaces_available > 0";
+                string oString = @"SELECT rooms.*, workplaces.workplaces_available, workplaces.date FROM rooms LEFT JOIN workplaces ON rooms.room_id = workplaces.room_id WHERE workplaces.date = @roomdate AND room_location = @loc AND workplaces.workplaces_available > 0";
 
                 MySqlCommand oCmd = new MySqlCommand(oString, Connection);
 
@@ -144,22 +144,26 @@ namespace ProjectC_JITTS.Database
                 oCmd.Parameters.AddWithValue("@roomdate", formattedroomdate);
                 oCmd.Parameters.AddWithValue("@loc", location);
 
-                // creating the strings 
+                // creating the strings
+                string roomid;
                 string roomnumber;
                 string workplaces;
                 string workplacesAvailable;
                 string roomlocation;
+                string roomlocationname;
 
                 MySqlDataReader dataReader = oCmd.ExecuteReader();
 
                 while (dataReader.Read())
                 {
+                    roomid = dataReader["room_id"].ToString();
                     roomnumber = dataReader["room_number"].ToString();
                     workplaces = dataReader["workplaces"].ToString();
                     workplacesAvailable = dataReader["workplaces_available"].ToString();
                     roomlocation = dataReader["room_location"].ToString();
+                    roomlocationname = dataReader["location_name"].ToString();
 
-                    roomList.Add(Tuple.Create(roomnumber, workplaces, workplacesAvailable, roomlocation, roomdate));
+                    roomList.Add(Tuple.Create(Int32.Parse(roomid), roomnumber, workplaces, workplacesAvailable, roomlocation, roomdate, roomlocationname));
                 }
 
                 dataReader.Close();
@@ -175,21 +179,14 @@ namespace ProjectC_JITTS.Database
             }
         }
 
-        public Tuple<string, string, string, string, string> ShowRoomByKeys(string roomdate, string roomnumber, string location)
+        public Tuple<string, string, string, string, string, string> ShowRoomByKeys(int room_id)
         {
             try
             {
                 Connection.Open();
-                string oString = @"SELECT * from projectc.rooms WHERE date = @roomdate AND room_number = @id AND room_location = @loc AND workplaces_available > 0";
+                string oString = @"SELECT rooms.*, workplaces.workplaces_available, workplaces.date FROM rooms LEFT JOIN workplaces ON rooms.room_id = workplaces.room_id WHERE workplaces.room_id = @roomid AND workplaces.workplaces_available > 0";
                 MySqlCommand oCmd = new MySqlCommand(oString, Connection);
-
-                DateTime date = Convert.ToDateTime(roomdate);
-                string formattedroomdate = date.ToString("yyyy-MM-dd HH:mm:ss.fff");
-
-                oCmd.Parameters.AddWithValue("@roomdate", formattedroomdate);
-                oCmd.Parameters.AddWithValue("@loc", location);
-                oCmd.Parameters.AddWithValue("@id", roomnumber);
-
+                oCmd.Parameters.AddWithValue("@roomid", room_id);
 
                 using (MySqlDataReader getRoom = oCmd.ExecuteReader())
                 {
@@ -198,7 +195,7 @@ namespace ProjectC_JITTS.Database
                     dataTable.Load(getRoom);
                     foreach (DataRow row in dataTable.Rows)
                     {
-                        return Tuple.Create(row["room_number"].ToString(), row["workplaces"].ToString(), row["workplaces_available"].ToString(), row["room_location"].ToString(), roomdate);
+                        return Tuple.Create(row["room_number"].ToString(), row["workplaces"].ToString(), row["workplaces_available"].ToString(), row["room_location"].ToString(), row["date"].ToString(), row["location_name"].ToString());
                     }
                 }
             }
@@ -210,7 +207,7 @@ namespace ProjectC_JITTS.Database
             {
                 Connection.Close();
             }
-            return Tuple.Create("", "", "", "","");
+            return Tuple.Create("", "", "", "","","");
         }
 
         public Tuple<string,int> ShowAccountInfo(string email)
