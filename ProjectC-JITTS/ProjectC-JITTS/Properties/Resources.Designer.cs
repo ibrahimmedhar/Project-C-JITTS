@@ -63,39 +63,9 @@ namespace ProjectC_JITTS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _0980980 {
-            get {
-                object obj = ResourceManager.GetObject("0980980", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _268_2683107_png_file_svg_password_icon_vector_png_transparent {
-            get {
-                object obj = ResourceManager.GetObject("268-2683107_png-file-svg-password-icon-vector-png-transparent", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap blis_logo {
             get {
                 object obj = ResourceManager.GetObject("blis logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap homepage_bg {
-            get {
-                object obj = ResourceManager.GetObject("homepage bg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,16 +96,6 @@ namespace ProjectC_JITTS.Properties {
         internal static System.Drawing.Bitmap passlog2 {
             get {
                 object obj = ResourceManager.GetObject("passlog2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pasw_log {
-            get {
-                object obj = ResourceManager.GetObject("pasw log", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
