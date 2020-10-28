@@ -93,5 +93,42 @@ namespace ProjectC_JITTS.Database
 				Connection.Close();
 			}
 		}
+
+		public bool AddRoom(int roomno, int workplaces, string roomlocation, string locationname)
+		{
+			try
+			{
+				Connection.Open();
+
+				string stringToInsert = @"INSERT INTO rooms (room_number, workplaces, room_location, location_name) VALUES (@RoomNo, @Workplaces, @RoomLocation, @LocationName)";
+
+				MySqlCommand command = new MySqlCommand(stringToInsert, Connection);
+				command.Parameters.AddWithValue("@RoomNo", roomno);
+				command.Parameters.AddWithValue("@Workplaces", workplaces);
+				command.Parameters.AddWithValue("@RoomLocation", roomlocation);
+				command.Parameters.AddWithValue("@LocationName", locationname);
+
+				command.Prepare();
+
+				int rowsUpdated = command.ExecuteNonQuery();
+				if (rowsUpdated != 0)
+				{
+					// if succesful 
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+			catch (MySqlException)
+			{
+				throw;
+			}
+			finally
+			{
+				Connection.Close();
+			}
+		}
 	}
 }
