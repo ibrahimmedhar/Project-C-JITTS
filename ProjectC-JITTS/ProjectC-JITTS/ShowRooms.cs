@@ -60,5 +60,20 @@ namespace ProjectC_JITTS
 			form.ShowDialog();
 			this.Close();
 		}
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowRooms_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
