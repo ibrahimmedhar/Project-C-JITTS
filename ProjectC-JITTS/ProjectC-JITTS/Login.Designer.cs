@@ -36,8 +36,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.alphaBlendTextBox2 = new ZBobb.AlphaBlendTextBox();
-            this.alphaBlendTextBox1 = new ZBobb.AlphaBlendTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -144,14 +144,27 @@
             // 
             // panel4
             // 
+            this.panel4.BackgroundImage = global::ProjectC_JITTS.Properties.Resources.mainbg;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Controls.Add(this.bunifuCustomLabel2);
             this.panel4.Controls.Add(this.alphaBlendTextBox2);
-            this.panel4.Controls.Add(this.alphaBlendTextBox1);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(546, 429);
+            this.panel4.Size = new System.Drawing.Size(559, 448);
             this.panel4.TabIndex = 3;
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(3, 276);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(336, 41);
+            this.bunifuCustomLabel2.TabIndex = 2;
+            this.bunifuCustomLabel2.Text = "Welcome to Blis Digital";
             // 
             // alphaBlendTextBox2
             // 
@@ -169,21 +182,6 @@
             this.alphaBlendTextBox2.TabIndex = 1;
             this.alphaBlendTextBox2.Text = "This is the BLIS Digital reservation system. If you don\'t have an account yet, pl" +
     "ease contact your supervisor or send a mail to exaple_blis@gmail.com.";
-            // 
-            // alphaBlendTextBox1
-            // 
-            this.alphaBlendTextBox1.BackAlpha = 0;
-            this.alphaBlendTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.alphaBlendTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.alphaBlendTextBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alphaBlendTextBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.alphaBlendTextBox1.Location = new System.Drawing.Point(10, 279);
-            this.alphaBlendTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.alphaBlendTextBox1.Name = "alphaBlendTextBox1";
-            this.alphaBlendTextBox1.ReadOnly = true;
-            this.alphaBlendTextBox1.Size = new System.Drawing.Size(284, 36);
-            this.alphaBlendTextBox1.TabIndex = 0;
-            this.alphaBlendTextBox1.Text = "Welcome to BLIS Digital";
             // 
             // Login
             // 
@@ -211,8 +209,8 @@
         private Bunifu.Framework.UI.BunifuTextbox txtEmail;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
-        private ZBobb.AlphaBlendTextBox alphaBlendTextBox2;
-        private ZBobb.AlphaBlendTextBox alphaBlendTextBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private ZBobb.AlphaBlendTextBox alphaBlendTextBox2;
     }
 }
