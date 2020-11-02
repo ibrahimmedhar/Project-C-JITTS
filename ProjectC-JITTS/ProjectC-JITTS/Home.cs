@@ -51,7 +51,7 @@ namespace ProjectC_JITTS
 				Button AdminButton = new Button();
 				AdminButton.Width = 150;
 				AdminButton.Height = 50;
-				AdminButton.Location = new Point(this.Width - 10, 50);
+				AdminButton.Location = new Point(this.Width - 200, 50);
 				AdminButton.Text = "Admin functies";
 
 				AdminPage AP = new AdminPage();
