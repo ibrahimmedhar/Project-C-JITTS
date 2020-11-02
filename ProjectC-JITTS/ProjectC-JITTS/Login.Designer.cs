@@ -34,10 +34,10 @@
             this.btnLogin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtEmail = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.alphaBlendTextBox2 = new ZBobb.AlphaBlendTextBox();
             this.alphaBlendTextBox1 = new ZBobb.AlphaBlendTextBox();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -124,24 +124,13 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.bunifuCustomLabel1);
             this.panel2.Cursor = System.Windows.Forms.Cursors.SizeNESW;
             this.panel2.Location = new System.Drawing.Point(4, 2);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(232, 151);
             this.panel2.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(20, 105);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 22);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "catch the right wave with us!";
             // 
             // panel4
             // 
@@ -165,6 +154,7 @@
             this.alphaBlendTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.alphaBlendTextBox2.Multiline = true;
             this.alphaBlendTextBox2.Name = "alphaBlendTextBox2";
+            this.alphaBlendTextBox2.ReadOnly = true;
             this.alphaBlendTextBox2.Size = new System.Drawing.Size(488, 97);
             this.alphaBlendTextBox2.TabIndex = 1;
             this.alphaBlendTextBox2.Text = "This is the BLIS Digital reservation system. If you don\'t have an account yet, pl" +
@@ -180,9 +170,20 @@
             this.alphaBlendTextBox1.Location = new System.Drawing.Point(10, 279);
             this.alphaBlendTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.alphaBlendTextBox1.Name = "alphaBlendTextBox1";
+            this.alphaBlendTextBox1.ReadOnly = true;
             this.alphaBlendTextBox1.Size = new System.Drawing.Size(284, 36);
             this.alphaBlendTextBox1.TabIndex = 0;
             this.alphaBlendTextBox1.Text = "Welcome to BLIS Digital";
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(2, 103);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(227, 20);
+            this.bunifuCustomLabel1.TabIndex = 7;
+            this.bunifuCustomLabel1.Text = "Catch the right wave with us!";
             // 
             // Login
             // 
@@ -209,9 +210,9 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnLogin;
         private Bunifu.Framework.UI.BunifuTextbox txtEmail;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel4;
         private ZBobb.AlphaBlendTextBox alphaBlendTextBox2;
         private ZBobb.AlphaBlendTextBox alphaBlendTextBox1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
     }
 }

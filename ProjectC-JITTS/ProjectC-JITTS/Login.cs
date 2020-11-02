@@ -34,7 +34,6 @@ namespace ProjectC_JITTS
                 Form home = new Home();
                 this.Hide();
                 home.ShowDialog();
-                this.Show();
                 this.Close();
             }
             else
