@@ -32,7 +32,6 @@ namespace ProjectC_JITTS
                 GetData.LoginInfo.PermissionLevel = accountInfo.Item2;
 
                 Form home = new Home();
-                this.Hide();
                 home.ShowDialog();
                 this.Close();
             }
