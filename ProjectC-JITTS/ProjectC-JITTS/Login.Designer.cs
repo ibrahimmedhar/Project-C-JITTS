@@ -34,10 +34,10 @@
             this.btnLogin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtEmail = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.alphaBlendTextBox2 = new ZBobb.AlphaBlendTextBox();
             this.alphaBlendTextBox1 = new ZBobb.AlphaBlendTextBox();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -68,7 +68,7 @@
             this.txtPassword.Location = new System.Drawing.Point(25, 293);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(194, 42);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.text = "password";
             // 
             // btnLogin
@@ -99,7 +99,7 @@
             this.btnLogin.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogin.selected = false;
             this.btnLogin.Size = new System.Drawing.Size(104, 32);
-            this.btnLogin.TabIndex = 5;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.Textcolor = System.Drawing.Color.White;
@@ -116,7 +116,7 @@
             this.txtEmail.Location = new System.Drawing.Point(25, 236);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(194, 42);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 1;
             this.txtEmail.text = "e-mail";
             // 
             // panel2
@@ -131,6 +131,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(232, 151);
             this.panel2.TabIndex = 2;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(2, 103);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(227, 20);
+            this.bunifuCustomLabel1.TabIndex = 7;
+            this.bunifuCustomLabel1.Text = "Catch the right wave with us!";
             // 
             // panel4
             // 
@@ -174,16 +184,6 @@
             this.alphaBlendTextBox1.Size = new System.Drawing.Size(284, 36);
             this.alphaBlendTextBox1.TabIndex = 0;
             this.alphaBlendTextBox1.Text = "Welcome to BLIS Digital";
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(2, 103);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(227, 20);
-            this.bunifuCustomLabel1.TabIndex = 7;
-            this.bunifuCustomLabel1.Text = "Catch the right wave with us!";
             // 
             // Login
             // 

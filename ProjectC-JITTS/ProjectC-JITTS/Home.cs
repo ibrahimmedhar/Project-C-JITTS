@@ -64,55 +64,5 @@ namespace ProjectC_JITTS
 			}
 			
 		}
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_2(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void bunifuTextbox1_OnTextChange(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuTextbox2_OnTextChange(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void alphaBlendTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuTextbox2_OnTextChange_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -42,7 +42,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Home";
             this.Text = "Home";
-            this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
 
         }
