@@ -114,6 +114,7 @@
     <Compile Include="Database\AddData.cs" />
     <Compile Include="Database\CheckLogin.cs" />
     <Compile Include="Database\Connecter.cs" />
+    <Compile Include="Database\GetAllUsers.cs" />
     <Compile Include="Database\GetData.cs" />
     <Compile Include="Database\UpdateData.cs" />
     <Compile Include="Home.cs">
@@ -153,6 +154,12 @@
     <Compile Include="ShowRooms.Designer.cs">
       <DependentUpon>ShowRooms.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowUsers.Designer.cs">
+      <DependentUpon>ShowUsers.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowRooms.resx">
       <DependentUpon>ShowRooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowUsers.resx">
+      <DependentUpon>ShowUsers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
