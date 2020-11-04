@@ -137,7 +137,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.ClientSize = new System.Drawing.Size(1049, 528);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);

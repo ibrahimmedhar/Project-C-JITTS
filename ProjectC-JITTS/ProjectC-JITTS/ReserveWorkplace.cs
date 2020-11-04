@@ -79,5 +79,30 @@ namespace ProjectC_JITTS
         {
 
         }
+
+        private void bunifuDatepicker1_onValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alphaBlendTextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alphaBlendTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuDatepicker1_onValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

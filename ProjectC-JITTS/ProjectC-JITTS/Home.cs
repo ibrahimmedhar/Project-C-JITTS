@@ -96,5 +96,10 @@ namespace ProjectC_JITTS
         {
 
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
