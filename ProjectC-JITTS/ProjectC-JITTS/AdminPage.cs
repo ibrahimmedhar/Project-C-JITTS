@@ -23,18 +23,49 @@ namespace ProjectC_JITTS
 			AddUserButton.Location = new Point(10, 50);
 			AddUserButton.Text = "Add user";
 
-			AddUser AU = new AddUser();
 
 			AddUserButton.Click += (s, p) => {
+				AddUser AU = new AddUser();
 				AU.ShowDialog();
 			};
 
 			this.Controls.Add(AddUserButton);
+
+			Button AddRoomButton = new Button();
+			AddRoomButton.Width = 150;
+			AddRoomButton.Height = 50;
+			AddRoomButton.Location = new Point(200, 50);
+			AddRoomButton.Text = "Add room";
+
+
+			AddRoomButton.Click += (s, p) => {
+				AddRoom AR = new AddRoom();
+				AR.ShowDialog();
+			};
+
+			this.Controls.Add(AddRoomButton);
+
+			Button AddDateButton = new Button();
+			AddDateButton.Width = 200;
+			AddDateButton.Height = 50;
+			AddDateButton.Location = new Point(400, 50);
+			AddDateButton.Text = "Add a new date with workplaces";
+
+
+			AddDateButton.Click += (s, p) => {
+				AddDate AD = new AddDate();
+				AD.ShowDialog();
+			};
+
+			this.Controls.Add(AddDateButton);
 		}
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+			Form home = new Home();
 			this.Hide();
+			home.ShowDialog();
+			
 			this.Close();
         }
     }
