@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowRooms));
             this.back_btn = new System.Windows.Forms.Button();
+            this.customInstaller1 = new MySql.Data.MySqlClient.CustomInstaller();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // back_btn
@@ -41,12 +46,41 @@
             this.back_btn.UseVisualStyleBackColor = true;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
-            // ShowReservations
+            // panel1
             // 
-            this.ClientSize = new System.Drawing.Size(1574, 929);
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.SizeNESW;
+            this.panel1.Location = new System.Drawing.Point(737, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(310, 190);
+            this.panel1.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(26, 129);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(266, 27);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "catch the right wave with us!";
+            // 
+            // ShowRooms
+            // 
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1049, 528);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.back_btn);
-            this.Name = "ShowReservations";
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "ShowRooms";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ShowRooms_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -54,5 +88,8 @@
         #endregion
 
         private System.Windows.Forms.Button back_btn;
+        private MySql.Data.MySqlClient.CustomInstaller customInstaller1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

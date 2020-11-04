@@ -18,32 +18,29 @@ namespace ProjectC_JITTS
             InitializeComponent();
         }
 
-
-        /// <summary>
-        /// Registeres the click of the button and logs the user in if the inputs are correct
-        /// </summary>
         private void btnLogin_Click(object sender, EventArgs e)
         {
             CheckLogin CL = new CheckLogin();
             GetData GD = new GetData();
 
-            if (CL.TryLogin(txtEmail.Text, txtPassword.Text))
+            if (CL.TryLogin(txtEmail.text, txtPassword.text))
             {
                 // to add the UserID to the application
-                Tuple<string, int> accountInfo = GD.ShowAccountInfo(txtEmail.Text);
+                Tuple<string, int> accountInfo = GD.ShowAccountInfo(txtEmail.text);
 
                 GetData.LoginInfo.UserID = accountInfo.Item1;
                 GetData.LoginInfo.PermissionLevel = accountInfo.Item2;
 
                 Form home = new Home();
+                this.Hide();
                 home.ShowDialog();
-                this.Close();
+
+                Application.Exit();
             }
             else
             {
                 MessageBox.Show("Onjuiste combinatie van Email en wachtwoord, probeer opnieuw");
             }
-
         }
     }
 }

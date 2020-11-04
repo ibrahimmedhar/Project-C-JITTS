@@ -46,5 +46,20 @@ namespace ProjectC_JITTS
 				x += 200;
 			}
 		}
+
+        private void ShowDates_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
