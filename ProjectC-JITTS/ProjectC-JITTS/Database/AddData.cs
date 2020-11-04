@@ -130,5 +130,41 @@ namespace ProjectC_JITTS.Database
 				Connection.Close();
 			}
 		}
+
+		public bool AddDateWithRoom(string workplaces, string date, string roomid)
+		{
+			try
+			{
+				Connection.Open();
+
+				string stringToInsert = @"INSERT INTO workplaces (workplaces_available, date, room_id) VALUES (@Workplaces, @Date, @RoomID)";
+
+				MySqlCommand command = new MySqlCommand(stringToInsert, Connection);
+				command.Parameters.AddWithValue("@Workplaces", workplaces);
+				command.Parameters.AddWithValue("@Date", date);
+				command.Parameters.AddWithValue("@RoomID", roomid);
+
+				command.Prepare();
+
+				int rowsUpdated = command.ExecuteNonQuery();
+				if (rowsUpdated != 0)
+				{
+					// if succesful 
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+			catch (MySqlException)
+			{
+				throw;
+			}
+			finally
+			{
+				Connection.Close();
+			}
+		}
 	}
 }

@@ -44,6 +44,20 @@ namespace ProjectC_JITTS
 			};
 
 			this.Controls.Add(AddRoomButton);
+
+			Button AddDateButton = new Button();
+			AddDateButton.Width = 200;
+			AddDateButton.Height = 50;
+			AddDateButton.Location = new Point(400, 50);
+			AddDateButton.Text = "Add a new date with workplaces";
+
+
+			AddDateButton.Click += (s, p) => {
+				AddDate AD = new AddDate();
+				AD.ShowDialog();
+			};
+
+			this.Controls.Add(AddDateButton);
 		}
 
         private void btnBack_Click(object sender, EventArgs e)

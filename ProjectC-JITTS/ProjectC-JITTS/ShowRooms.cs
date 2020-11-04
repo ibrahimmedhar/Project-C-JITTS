@@ -35,10 +35,11 @@ namespace ProjectC_JITTS
 				roomLabel.Text += "\nWorkplaces : " + room.Item3;
 				roomLabel.Text += "\nWorkplaces Available " + room.Item4;
 				roomLabel.Text += "\nLocation Key: " + room.Item5;
-				roomLabel.Text += "\nDate: " + room.Item6;
+				roomLabel.Text += "\nDate: " + DateTime.Parse(room.Item6).ToString("dd-MM-yyyy");
+				
 
 				roomLabel.Click += (s, p) => {
-					ReserveWorkplace RW = new ReserveWorkplace(room.Item1);
+					ReserveWorkplace RW = new ReserveWorkplace(room.Item1, room.Item6);
 					this.Hide();
 					RW.ShowDialog();
 					this.Close();
