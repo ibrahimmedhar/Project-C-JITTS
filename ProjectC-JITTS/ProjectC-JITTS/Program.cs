@@ -21,15 +21,15 @@ namespace ProjectC_JITTS
 
         static void Main()
    {
+            SetMailWeekly();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
-            SetMailWeekly();
+            Application.Run(new Login()); 
         }
 
         //public static string server = "smtp.gmail.com";
         public static void SetMail()
-        {
+        {         
             string email = GetData.LoginInfo.UserID.ToString() ;
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
@@ -37,13 +37,30 @@ namespace ProjectC_JITTS
             mail.To.Add(GetData.LoginInfo.UserID);
             mail.Subject = "Confirmation of reservation";
             mail.Body = "Dear " + email +  ", your reservation is complete";
-           
+            
             SmtpServer.Port = 587;
             SmtpServer.Credentials = new System.Net.NetworkCredential("projectcgroep1@gmail.com", "projectc123");
             SmtpServer.EnableSsl = true; 
             SmtpServer.Send(mail);
         }
 
+        public static void SetMailWeekly()
+          
+        {
+            //checks if the current day is monday
+            DateTime CurrentDate = DateTime.Now.Date;
+            if (CurrentDate.DayOfWeek == DayOfWeek.Monday)
+            {
+                Console.WriteLine("Today is " + CurrentDate.DayOfWeek);
+                //If the current date is monday -> SetMailWeeklyNotification()
+                SetMailWeeklyNotification();
+            }
+            else
+            {
+                Console.WriteLine("Today is not monday, it is " + CurrentDate.DayOfWeek);
+            }
+            
+        }
         public static void SetMailWeeklyNotification()
         {
             MailMessage mail = new MailMessage();
@@ -52,34 +69,11 @@ namespace ProjectC_JITTS
             mail.To.Add("svensayed@gmail.com");
             mail.Subject = "There are new reservations available";
             mail.Body = "It is possible to reserve new reservations";
-            
+
             SmtpServer.Port = 587;
             SmtpServer.Credentials = new System.Net.NetworkCredential("projectcgroep1@gmail.com", "projectc123");
             SmtpServer.EnableSsl = true;
             SmtpServer.Send(mail);
-        }
-
-        public static void SetMailWeekly()
-        {
-            DateTime BaseDate = new DateTime(2020,10,12);
-            DateTime CurrentDate = DateTime.Now.Date;
-            DateTime NextDate = BaseDate.AddDays(7);
-            string stringNextDate = Convert.ToString(NextDate.ToShortDateString());
-
-            if (CurrentDate.Equals(NextDate))
-            {
-                Console.WriteLine("Weekly Notification has been send to the email");
-                SetMailWeeklyNotification();
-            }
-
-            
-            Console.WriteLine("Dit is de huidige datum " + CurrentDate);
-            Console.WriteLine("Dit is de datum van volgende week " + stringNextDate);
-            Console.WriteLine(BaseDate);
-
-
-
-        
         }
     }
 }

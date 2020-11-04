@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -49,7 +50,7 @@ namespace ProjectC_JITTS
 			{
 				// insert the reservation into the database using AddData
 				succesInsert = AD.ReserveWorkplace(GetData.LoginInfo.UserID, Int32.Parse(roomInfo.Item1), roomInfo.Item4, roomInfo.Item5);
-				
+
 				if (succesInsert)
                 {
 					DialogResult result = MessageBox.Show("Reservation Completed", "Dialog Title", MessageBoxButtons.OK);
@@ -64,18 +65,12 @@ namespace ProjectC_JITTS
                 {
 					MessageBox.Show("Mislukt");
                 }
-				
+
 			};
 
 				this.Controls.Add(ReserveButton);
 
 			
 		}
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-			Program.SetMailWeekly();
-			
-        }
     }
 }
