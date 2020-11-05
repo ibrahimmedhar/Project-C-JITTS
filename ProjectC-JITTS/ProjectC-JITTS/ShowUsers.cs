@@ -30,7 +30,6 @@ namespace ProjectC_JITTS
 
         public void AddToDTA()
         {
-            Connecter cnn = new Connecter();
 
         }
     }

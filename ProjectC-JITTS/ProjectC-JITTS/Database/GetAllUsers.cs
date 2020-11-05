@@ -13,6 +13,7 @@ namespace ProjectC_JITTS.Database
 
         public void FetchUsers()
         {
+
             try
             {
                 Connection.Open();
