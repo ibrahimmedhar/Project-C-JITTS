@@ -1,4 +1,5 @@
-﻿using ProjectC_JITTS.Database;
+﻿using MySql.Data.MySqlClient;
+using ProjectC_JITTS.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,14 +23,34 @@ namespace ProjectC_JITTS
             dta.Height = this.Height;
             dta.Location = new Point(0,0);
 
-            AddToDTA();
-
             this.Controls.Add(dta);
-            
-        }
 
-        public void AddToDTA()
-        {
+            string dbstring = "server=localhost;user=root;pwd=admin;database=projectc";
+            MySqlConnection connection = new MySqlConnection(dbstring);
+
+            try
+            {
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT email, permission_level FROM projectc.accounts;", connection);
+
+
+
+                connection.Open();
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "users");
+                dta.DataSource = ds.Tables["users"];
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
 
         }
     }

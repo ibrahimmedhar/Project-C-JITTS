@@ -23,26 +23,25 @@ namespace ProjectC_JITTS
 			AddUserButton.Location = new Point(10, 50);
 			AddUserButton.Text = "Add user";
 
-			Button ShowUsersButton = new Button();
-			ShowUsersButton.Width = 150;
-			ShowUsersButton.Height = 50;
-			ShowUsersButton.Location = new Point(10, 125);
-			ShowUsersButton.Text = "Add user";
-
-			AddUser AU = new AddUser();
-
 			AddUserButton.Click += (s, p) => {
 				AddUser AU = new AddUser();
 				AU.ShowDialog();
 			};
 
-			ShowUsers SU = new ShowUsers();
+			this.Controls.Add(AddUserButton);
+
+			Button ShowUsersButton = new Button();
+			ShowUsersButton.Width = 150;
+			ShowUsersButton.Height = 50;
+			ShowUsersButton.Location = new Point(10, 150);
+			ShowUsersButton.Text = "Show all users";
 
 			ShowUsersButton.Click += (s, p) => {
+				ShowUsers SU = new ShowUsers();
 				SU.ShowDialog();
 			};
 
-			this.Controls.Add(AddUserButton);
+			this.Controls.Add(ShowUsersButton);
 
 			Button AddRoomButton = new Button();
 			AddRoomButton.Width = 150;

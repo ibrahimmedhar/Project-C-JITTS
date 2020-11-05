@@ -126,7 +126,6 @@
     <Compile Include="Database\AddData.cs" />
     <Compile Include="Database\CheckLogin.cs" />
     <Compile Include="Database\Connecter.cs" />
-    <Compile Include="Database\GetAllUsers.cs" />
     <Compile Include="Database\GetData.cs" />
     <Compile Include="Database\UpdateData.cs" />
     <Compile Include="dropDownItem.cs" />
