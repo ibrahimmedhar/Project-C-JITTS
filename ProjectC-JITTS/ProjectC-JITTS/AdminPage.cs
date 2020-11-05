@@ -16,6 +16,8 @@ namespace ProjectC_JITTS
         public AdminPage()
         {
             InitializeComponent();
+			this.Width = 1280;
+			this.Height = 720;
 
 			Button AddUserButton = new Button();
 			AddUserButton.Width = 150;
