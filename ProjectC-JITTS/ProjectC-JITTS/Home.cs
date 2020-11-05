@@ -57,6 +57,8 @@ namespace ProjectC_JITTS
 				AdminPage AP = new AdminPage();
 
 				AdminButton.Click += (s, p) => {
+					this.Hide();
+					this.Close();
 					AP.ShowDialog();
 				};
 

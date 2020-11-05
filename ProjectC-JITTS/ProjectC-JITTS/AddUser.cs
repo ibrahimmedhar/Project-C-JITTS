@@ -36,18 +36,18 @@ namespace ProjectC_JITTS
 
                 if (succesInsert)
                 {
-                    MessageBox.Show("Toegevoegd");
+                    MessageBox.Show("Account was added");
                     this.Hide();
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Mislukt");
+                    MessageBox.Show("Account was not added");
                 }
             }
             else
             {
-                MessageBox.Show("Wachtwoorden komen niet overeen");
+                MessageBox.Show("Passwords do not match");
             }
         }
     }

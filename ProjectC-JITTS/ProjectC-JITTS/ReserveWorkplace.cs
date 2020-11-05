@@ -21,7 +21,7 @@ namespace ProjectC_JITTS
 		/// </summary>
 		/// <param name="roomnumber"></param>
 		/// <param name="location"></param>
-		public ReserveWorkplace(string roomdate, string roomnumber, string roomloc)
+		public ReserveWorkplace(int room_id, string date)
         {
             InitializeComponent();
 			bool succesInsert;
@@ -30,10 +30,16 @@ namespace ProjectC_JITTS
 			AddData AD = new AddData();
 
 			this.AutoScroll = true;
-			Tuple<string, string, string, string, string> roomInfo = GD.ShowRoomByKeys(roomdate, roomnumber, roomloc);
+			Tuple<string, string, string, string, string, string> roomInfo = GD.ShowRoomByKeys(room_id, date);
 
 			Label LB1 = new Label();
-			LB1.Text = "Room no selected: " + roomInfo.Item1 + "\n\nWorkplaces: " + roomInfo.Item2 + "\n\nWorkplaces left:  " + roomInfo.Item3 + "\n\nLocation:  " + roomInfo.Item4 + "\nDate:	" + roomInfo.Item5;
+			LB1.Text = "Location: " + roomInfo.Item6 +
+				"\n\nRoom no selected: " + roomInfo.Item1 + 
+				"\n\nWorkplaces: " + roomInfo.Item2 + 
+				"\n\nWorkplaces left:  " + roomInfo.Item3 + 
+				"\n\nLocation Key:  " + roomInfo.Item4 +
+			"\n\nDate Selected:	" + DateTime.Parse(roomInfo.Item5).ToString("dd-MM-yyyy");
+
 			LB1.MaximumSize = new Size(600, 0);
 			LB1.Location = new Point(50, 10);
 			LB1.AutoSize = true;
@@ -48,7 +54,7 @@ namespace ProjectC_JITTS
 			ReserveButton.Click += (s, p) =>
 			{
 				// insert the reservation into the database using AddData
-				succesInsert = AD.ReserveWorkplace(GetData.LoginInfo.UserID, Int32.Parse(roomInfo.Item1), roomInfo.Item4, roomInfo.Item5);
+				succesInsert = AD.ReserveWorkplace(GetData.LoginInfo.UserID, room_id, Int32.Parse(roomInfo.Item1), roomInfo.Item4, roomInfo.Item5);
 				
 				if (succesInsert)
                 {
