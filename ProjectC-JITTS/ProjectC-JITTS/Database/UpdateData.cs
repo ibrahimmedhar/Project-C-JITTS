@@ -12,25 +12,19 @@ namespace ProjectC_JITTS.Database
 		/// <summary>
 		/// After adding te reservation we want to remove 1 available workplace 
 		/// </summary>
-		/// <param name="roomnumber">int of the room number</param>
-		/// <param name="roomlocation">string of the room location</param>
-        public bool RemoveWorkplace(int roomnumber, string roomlocation)
+
+        public bool RemoveWorkplace(int room_id, string date)
         {
 			try
 			{
 				Connection.Open();
 
-				string stringToInsert = @"UPDATE rooms SET workplaces_available = workplaces_available - 1 WHERE (room_number = @RoomNumber) and (room_location = @RoomLocation);";
+				string stringToInsert = @"UPDATE workplaces SET workplaces_available = workplaces_available - 1 WHERE (room_id = @roomid) AND (date = @reservationdate);";
 
 				MySqlCommand command = new MySqlCommand(stringToInsert, Connection);
-				MySqlParameter RoomNumberParam = new MySqlParameter("@RoomNumber", MySqlDbType.Int32);
-				MySqlParameter RoomLocationParam = new MySqlParameter("@RoomLocation", MySqlDbType.VarChar);
 
-				RoomNumberParam.Value = roomnumber;
-				RoomLocationParam.Value = roomlocation;
-
-				command.Parameters.Add(RoomNumberParam);
-				command.Parameters.Add(RoomLocationParam);
+				command.Parameters.AddWithValue("@roomid", room_id);
+				command.Parameters.AddWithValue("@reservationdate", date);
 
 				command.Prepare();
 				int rowsUpdated = command.ExecuteNonQuery();

@@ -23,22 +23,23 @@ namespace ProjectC_JITTS
 			this.AutoScroll = true;
 			int x = 20;
 
-			foreach (Tuple<string, string, string, string, string> room in GD.ShowRoomsByDateAndLoc(roomdate, location))
+			foreach (Tuple<int, string, string, string, string, string, string> room in GD.ShowRoomsByDateAndLoc(roomdate, location))
 			{
 				Label roomLabel = new Label();
 				roomLabel.Width = 150;
-				roomLabel.Height = 200;
+				roomLabel.Height = 220;
 				roomLabel.BorderStyle = BorderStyle.FixedSingle;
 				roomLabel.Cursor = Cursors.Hand;
-				roomLabel.Text = "Room no: " + room.Item1;
-				roomLabel.Text += "\nWorkplaces : " + room.Item2;
-				roomLabel.Text += "\nWorkplaces Available " + room.Item3;
-				roomLabel.Text += "\nLocation: " + room.Item4;
-				roomLabel.Text += "\nDate: " + room.Item5;
-
-				ReserveWorkplace RW = new ReserveWorkplace(room.Item5, room.Item1, room.Item4);
+				roomLabel.Text = "Location name: " + room.Item7;
+				roomLabel.Text += "\nRoom no: " + room.Item2;
+				roomLabel.Text += "\nWorkplaces : " + room.Item3;
+				roomLabel.Text += "\nWorkplaces Available " + room.Item4;
+				roomLabel.Text += "\nLocation Key: " + room.Item5;
+				roomLabel.Text += "\nDate: " + DateTime.Parse(room.Item6).ToString("dd-MM-yyyy");
+				
 
 				roomLabel.Click += (s, p) => {
+					ReserveWorkplace RW = new ReserveWorkplace(room.Item1, room.Item6);
 					this.Hide();
 					RW.ShowDialog();
 					this.Close();
@@ -51,8 +52,8 @@ namespace ProjectC_JITTS
 
 				x += 200;
 			}
-
 		}
+
 		private void back_btn_Click(object sender, EventArgs e)
         {
 			this.Hide();

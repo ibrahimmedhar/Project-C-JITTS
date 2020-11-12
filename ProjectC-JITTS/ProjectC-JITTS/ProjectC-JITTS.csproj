@@ -99,11 +99,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRoom.Designer.cs">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDate.Designer.cs">
+      <DependentUpon>AddDate.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminPage.cs">
       <SubType>Form</SubType>
@@ -116,6 +128,7 @@
     <Compile Include="Database\Connecter.cs" />
     <Compile Include="Database\GetData.cs" />
     <Compile Include="Database\UpdateData.cs" />
+    <Compile Include="dropDownItem.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,8 +166,14 @@
     <Compile Include="ShowRooms.Designer.cs">
       <DependentUpon>ShowRooms.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddRoom.resx">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDate.resx">
+      <DependentUpon>AddDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPage.resx">
       <DependentUpon>AdminPage.cs</DependentUpon>
