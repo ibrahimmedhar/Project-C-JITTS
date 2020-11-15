@@ -45,7 +45,6 @@ namespace ProjectC_JITTS
         {
             if (dropdownRoom.SelectedIndex > -1)
             {
-                //
                 string roomID = ((dropDownItem)dropdownRoom.SelectedItem).HiddenValue;
                 FillFields(roomID);
             }
@@ -53,21 +52,28 @@ namespace ProjectC_JITTS
 
         public void FillFields(string room_id)
         {
+            GetData GD = new GetData();
+            Tuple<string, string, string, string> roomInfobyID = GD.ShowRoomByID(Int32.Parse(room_id));
+
             roomno_label.Visible = true;
             room_no.Visible = true;
+            room_no.Text = roomInfobyID.Item1;
 
             roomamountLabel.Visible = true;
             workplaces.Visible = true;
+            workplaces.Text = roomInfobyID.Item2;
 
             locationLabel.Visible = true;
             location_zip.Visible = true;
+            location_zip.Text = roomInfobyID.Item3.Substring(0, 6);
 
             housenoLabel.Visible = true;
             location_no.Visible = true;
+            location_no.Text = roomInfobyID.Item3.Substring(6);
 
             locationnameLabel.Visible = true;
             location_name.Visible = true;
-
+            location_name.Text = roomInfobyID.Item4;
 
             btnSave.Visible = true;
         }
