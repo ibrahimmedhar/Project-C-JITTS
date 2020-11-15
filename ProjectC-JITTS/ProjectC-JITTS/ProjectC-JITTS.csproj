@@ -129,6 +129,12 @@
     <Compile Include="Database\GetData.cs" />
     <Compile Include="Database\UpdateData.cs" />
     <Compile Include="dropDownItem.cs" />
+    <Compile Include="EditRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditRoom.Designer.cs">
+      <DependentUpon>EditRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoveRoom.Designer.cs">
+      <DependentUpon>RemoveRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="ReserveWorkplace.cs">
       <SubType>Form</SubType>
@@ -190,6 +202,9 @@
     <EmbeddedResource Include="AdminPage.resx">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditRoom.resx">
+      <DependentUpon>EditRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +218,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveRoom.resx">
+      <DependentUpon>RemoveRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReserveWorkplace.resx">
       <DependentUpon>ReserveWorkplace.cs</DependentUpon>

@@ -50,6 +50,39 @@ namespace ProjectC_JITTS.Database
             }
         }
 
+        public string ShowLocationInfoByLocation(string location)
+        {
+            List<string> locationList = new List<string>();
+            try
+            {
+                Connection.Open();
+                string oString = @"SELECT DISTINCT location_name from rooms WHERE room_location = @roomloc";
+                MySqlCommand command = new MySqlCommand(oString, Connection);
+                command.Parameters.AddWithValue("@roomloc", location);
+
+
+                string location_name = "";
+                MySqlDataReader dataReader = command.ExecuteReader();
+
+
+                if (dataReader.Read())
+                {
+                    location_name = dataReader["location_name"].ToString();
+                }
+
+                dataReader.Close();
+                return location_name;
+            }
+            catch (MySqlException ex)
+            {
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
         public List<string> ShowDatesByLocation(string location)
         {
             List<string> dateList = new List<string>();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.Crmf;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -19,26 +20,43 @@ namespace ProjectC_JITTS
         [STAThread]
 
         static void Main()
-        {
+        { 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+            SetMailWeekly();
         }
 
-        //public static string server = "smtp.gmail.com";
-        public static void SetMail()
+        public static void SetMailWeekly()
         {
-            string email = GetData.LoginInfo.UserID.ToString() ;
+            //checks if the current day is monday
+            DateTime CurrentDate = DateTime.Now.Date;
+            if (CurrentDate.DayOfWeek == DayOfWeek.Monday)
+            {
+                Console.WriteLine("Today is " + CurrentDate.DayOfWeek);
+
+                //If the current date is monday -> SetMailWeeklyNotification()
+                SetMailWeeklyNotification();
+            }
+            else
+            {
+                Console.WriteLine("Today is not monday, it is " + CurrentDate.DayOfWeek);
+            }     
+        }
+
+        public static void SetMailWeeklyNotification()
+        {
+            string email = Convert.ToString(GetData.LoginInfo.UserID);
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
             mail.From = new MailAddress("projectcgroep1@gmail.com");
             mail.To.Add(GetData.LoginInfo.UserID);
-            mail.Subject = "Confirmation of reservation";
-            mail.Body = "Dear " + email +  ", your reservation is complete";
-           
+            mail.Subject = "There are new reservations available";
+            mail.Body = "Dear " + email + " It is possible to reserve new reservations";
+
             SmtpServer.Port = 587;
             SmtpServer.Credentials = new System.Net.NetworkCredential("projectcgroep1@gmail.com", "projectc123");
-            SmtpServer.EnableSsl = true; 
+            SmtpServer.EnableSsl = true;
             SmtpServer.Send(mail);
         }
     }
