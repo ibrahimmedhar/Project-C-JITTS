@@ -63,21 +63,21 @@ namespace ProjectC_JITTS
 					{
 						string email = GetData.LoginInfo.UserID.ToString();
 						MailMessage mail = new MailMessage();
-							SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-							mail.From = new MailAddress("projectcgroep1@gmail.com");
-							mail.To.Add(GetData.LoginInfo.UserID);
-							mail.Subject = "Confirmation of reservation";
-							mail.Body = 
-								"Your reservation has succesfully been completed: \n\n" +	
-								"Location: " + roomInfo.Item6 +
-								"\nRoom no selected: " + roomInfo.Item1 +
-								"\nLocation Key:  " + roomInfo.Item4 +
-								"\nDate Selected:	" + DateTime.Parse(roomInfo.Item5).ToString("dd-MM-yyyy"); ;
+						SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+						mail.From = new MailAddress("projectcgroep1@gmail.com");
+						mail.To.Add(GetData.LoginInfo.UserID);
+						mail.Subject = "Confirmation of reservation";
+						mail.Body = 
+							"Your reservation has succesfully been completed: \n\n" +	
+							"Location: " + roomInfo.Item6 +
+							"\nRoom no selected: " + roomInfo.Item1 +
+							"\nLocation Key:  " + roomInfo.Item4 +
+							"\nDate Selected:	" + DateTime.Parse(roomInfo.Item5).ToString("dd-MM-yyyy"); ;
 
-							SmtpServer.Port = 587;
-							SmtpServer.Credentials = new System.Net.NetworkCredential("projectcgroep1@gmail.com", "projectc123");
-							SmtpServer.EnableSsl = true;
-							SmtpServer.Send(mail);
+						SmtpServer.Port = 587;
+						SmtpServer.Credentials = new System.Net.NetworkCredential("projectcgroep1@gmail.com", "projectc123");
+						SmtpServer.EnableSsl = true;
+						SmtpServer.Send(mail);
 						
 						this.Hide();
 						this.Close();
