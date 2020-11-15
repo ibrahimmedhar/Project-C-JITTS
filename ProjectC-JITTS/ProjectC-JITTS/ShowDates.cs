@@ -28,7 +28,7 @@ namespace ProjectC_JITTS
 				dateLabel.Height = 200;
 				dateLabel.BorderStyle = BorderStyle.FixedSingle;
 				dateLabel.Cursor = Cursors.Hand;
-				dateLabel.Text = "Date: " + date;
+				dateLabel.Text = "Date: " + DateTime.Parse(date).ToString("dd-MM-yyyy");
 
 				ShowRooms SR = new ShowRooms(date, location);
 
