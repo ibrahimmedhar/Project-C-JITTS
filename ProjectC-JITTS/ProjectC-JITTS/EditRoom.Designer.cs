@@ -41,9 +41,12 @@
             this.locationnameLabel = new System.Windows.Forms.Label();
             this.location_name = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.workplaces = new System.Windows.Forms.TextBox();
             this.room_no = new System.Windows.Forms.TextBox();
+            this.workplaces = new System.Windows.Forms.NumericUpDown();
+            this.location_options = new System.Windows.Forms.ComboBox();
+            this.optionsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.location_no)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workplaces)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -118,7 +121,7 @@
             // 
             this.locationLabel.AutoSize = true;
             this.locationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locationLabel.Location = new System.Drawing.Point(34, 398);
+            this.locationLabel.Location = new System.Drawing.Point(34, 524);
             this.locationLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.locationLabel.Name = "locationLabel";
             this.locationLabel.Size = new System.Drawing.Size(400, 37);
@@ -128,9 +131,10 @@
             // 
             // location_zip
             // 
-            this.location_zip.Location = new System.Drawing.Point(41, 441);
+            this.location_zip.Location = new System.Drawing.Point(41, 567);
             this.location_zip.Margin = new System.Windows.Forms.Padding(6);
             this.location_zip.Name = "location_zip";
+            this.location_zip.ReadOnly = true;
             this.location_zip.Size = new System.Drawing.Size(432, 31);
             this.location_zip.TabIndex = 5;
             this.location_zip.Visible = false;
@@ -139,7 +143,7 @@
             // 
             this.housenoLabel.AutoSize = true;
             this.housenoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.housenoLabel.Location = new System.Drawing.Point(34, 520);
+            this.housenoLabel.Location = new System.Drawing.Point(34, 646);
             this.housenoLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.housenoLabel.Name = "housenoLabel";
             this.housenoLabel.Size = new System.Drawing.Size(353, 37);
@@ -149,8 +153,14 @@
             // 
             // location_no
             // 
-            this.location_no.Location = new System.Drawing.Point(41, 560);
+            this.location_no.Location = new System.Drawing.Point(41, 686);
+            this.location_no.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
             this.location_no.Name = "location_no";
+            this.location_no.ReadOnly = true;
             this.location_no.Size = new System.Drawing.Size(120, 31);
             this.location_no.TabIndex = 6;
             this.location_no.Visible = false;
@@ -159,7 +169,7 @@
             // 
             this.locationnameLabel.AutoSize = true;
             this.locationnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locationnameLabel.Location = new System.Drawing.Point(34, 626);
+            this.locationnameLabel.Location = new System.Drawing.Point(34, 752);
             this.locationnameLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.locationnameLabel.Name = "locationnameLabel";
             this.locationnameLabel.Size = new System.Drawing.Size(228, 37);
@@ -169,16 +179,17 @@
             // 
             // location_name
             // 
-            this.location_name.Location = new System.Drawing.Point(41, 669);
+            this.location_name.Location = new System.Drawing.Point(41, 795);
             this.location_name.Margin = new System.Windows.Forms.Padding(6);
             this.location_name.Name = "location_name";
+            this.location_name.ReadOnly = true;
             this.location_name.Size = new System.Drawing.Size(432, 31);
             this.location_name.TabIndex = 7;
             this.location_name.Visible = false;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(37, 728);
+            this.btnSave.Location = new System.Drawing.Point(37, 854);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(436, 44);
@@ -188,19 +199,9 @@
             this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // workplaces
-            // 
-            this.workplaces.Location = new System.Drawing.Point(41, 325);
-            this.workplaces.Margin = new System.Windows.Forms.Padding(6);
-            this.workplaces.Name = "workplaces";
-            this.workplaces.ReadOnly = true;
-            this.workplaces.Size = new System.Drawing.Size(124, 31);
-            this.workplaces.TabIndex = 25;
-            this.workplaces.Visible = false;
-            // 
             // room_no
             // 
-            this.room_no.Location = new System.Drawing.Point(37, 209);
+            this.room_no.Location = new System.Drawing.Point(41, 209);
             this.room_no.Margin = new System.Windows.Forms.Padding(6);
             this.room_no.Name = "room_no";
             this.room_no.ReadOnly = true;
@@ -208,13 +209,51 @@
             this.room_no.TabIndex = 26;
             this.room_no.Visible = false;
             // 
+            // workplaces
+            // 
+            this.workplaces.Location = new System.Drawing.Point(41, 322);
+            this.workplaces.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.workplaces.Name = "workplaces";
+            this.workplaces.Size = new System.Drawing.Size(120, 31);
+            this.workplaces.TabIndex = 4;
+            this.workplaces.Visible = false;
+            // 
+            // location_options
+            // 
+            this.location_options.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.location_options.FormattingEnabled = true;
+            this.location_options.Location = new System.Drawing.Point(41, 454);
+            this.location_options.Name = "location_options";
+            this.location_options.Size = new System.Drawing.Size(299, 33);
+            this.location_options.TabIndex = 5;
+            this.location_options.Visible = false;
+            this.location_options.SelectedIndexChanged += new System.EventHandler(this.location_options_SelectedIndexChanged);
+            // 
+            // optionsLabel
+            // 
+            this.optionsLabel.AutoSize = true;
+            this.optionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionsLabel.Location = new System.Drawing.Point(34, 400);
+            this.optionsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.optionsLabel.Name = "optionsLabel";
+            this.optionsLabel.Size = new System.Drawing.Size(252, 37);
+            this.optionsLabel.TabIndex = 28;
+            this.optionsLabel.Text = "Location options";
+            this.optionsLabel.Visible = false;
+            // 
             // EditRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1574, 1129);
-            this.Controls.Add(this.room_no);
+            this.Controls.Add(this.optionsLabel);
+            this.Controls.Add(this.location_options);
             this.Controls.Add(this.workplaces);
+            this.Controls.Add(this.room_no);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.location_name);
             this.Controls.Add(this.locationnameLabel);
@@ -231,6 +270,7 @@
             this.Name = "EditRoom";
             this.Text = "EditRoom";
             ((System.ComponentModel.ISupportInitialize)(this.location_no)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workplaces)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,7 +291,9 @@
         private System.Windows.Forms.Label locationnameLabel;
         private System.Windows.Forms.TextBox location_name;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox workplaces;
         private System.Windows.Forms.TextBox room_no;
+        private System.Windows.Forms.NumericUpDown workplaces;
+        private System.Windows.Forms.ComboBox location_options;
+        private System.Windows.Forms.Label optionsLabel;
     }
 }
