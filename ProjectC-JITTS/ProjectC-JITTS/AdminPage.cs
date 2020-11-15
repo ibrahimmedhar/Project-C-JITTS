@@ -51,7 +51,7 @@ namespace ProjectC_JITTS
 
             Button EditRoomButton = new Button
             {
-                Width = 200,
+                Width = 150,
                 Height = 50,
                 Location = new Point(400, 50),
                 Text = "Edit room"
@@ -67,7 +67,7 @@ namespace ProjectC_JITTS
 
             Button RemoveRoomButton = new Button
             {
-                Width = 200,
+                Width = 150,
                 Height = 50,
                 Location = new Point(600, 50),
                 Text = "Remove room"
