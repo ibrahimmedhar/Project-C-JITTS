@@ -41,7 +41,7 @@ namespace ProjectC_JITTS.Database
 				if (rowsUpdated != 0 )
 				{
 					// if succesful remove an available workplace of a room with the right date
-					return UD.RemoveWorkplace(room_id, formattedroomdate);
+					return UD.RemoveAvailableWorkplace(room_id, formattedroomdate);
 				}
 				else
                 {
