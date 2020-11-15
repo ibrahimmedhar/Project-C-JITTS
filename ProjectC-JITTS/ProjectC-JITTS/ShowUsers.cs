@@ -15,7 +15,7 @@ namespace ProjectC_JITTS
     public partial class ShowUsers : Form
     {
         public DataGridView dta = new DataGridView();
-
+        protected string dbstring = "server=localhost;user=root;pwd=admin;database=projectc";
         public ShowUsers()
         {
             InitializeComponent();
@@ -29,15 +29,14 @@ namespace ProjectC_JITTS
             dta.Width = this.Width - 200;
             dta.Height = this.Height;
             dta.Location = new Point(0, 0);
+            dta.AllowUserToAddRows = false;
 
             this.Controls.Add(dta);
 
-            string dbstring = "server=localhost;user=root;pwd=admin;database=projectc";
             MySqlConnection connection = new MySqlConnection(dbstring);
-
             try
             {
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT email, permission_level FROM projectc.accounts;", connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT name, surname, email, permission_level FROM projectc.accounts;", connection);
 
                 connection.Open();
 
@@ -74,20 +73,84 @@ namespace ProjectC_JITTS
                 Remove_User();
             };
             EditUser.Click += (s, p) => {
-                return;
+                EditSelectedUser();
             };
         }
 
-        public void Remove_User()
+        private void Remove_User()
         {
             if (dta.SelectedRows.Count > 0 || dta.SelectedCells.Count > 0)
             {
-                MessageBox.Show("verwijderen");
+                MySqlConnection connection = new MySqlConnection(dbstring);
+
+                try
+                {
+                    string query = "DELETE FROM `projectc`.`accounts` WHERE (`email` = '" + dta.SelectedCells[0].Value.ToString() + "');";
+
+                    connection.Open();
+
+                    MySqlCommand command = new MySqlCommand(query, connection);
+
+                    if (command.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("User deleted");
+                        RefreshScreen();
+                    }
+                    else
+                    {
+                        MessageBox.Show("???");
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
             else
             {
                 MessageBox.Show("Select a user to remove");
             }
+        }
+
+        private void EditSelectedUser()
+        {
+            int row = dta.CurrentCell.RowIndex;
+            string name = dta.Rows[row].Cells[0].Value.ToString();
+            string surname = dta.Rows[row].Cells[1].Value.ToString();
+            string email = dta.Rows[row].Cells[2].Value.ToString();
+
+            EditUser EU = new EditUser(name, surname, email);
+            EU.ShowDialog();
+
+            MySqlConnection connection = new MySqlConnection(dbstring);
+            try
+            {
+                string query = "UPDATE `projectc`.`accounts` SET `email` = '"+ EU.ReturnEmail + "', `name` = '" + EU.ReturnName + "', `surname` = '" + EU.ReturnSurname + "' WHERE (`email` = '" + email +"');";
+
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(query, connection);
+
+                if (command.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("User editted");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            
+            RefreshScreen();
         }
     }
 }

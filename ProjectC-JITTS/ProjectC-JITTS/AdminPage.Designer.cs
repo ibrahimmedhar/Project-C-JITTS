@@ -33,9 +33,10 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(1307, 1014);
+            this.btnBack.Location = new System.Drawing.Point(654, 527);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(237, 87);
+            this.btnBack.Size = new System.Drawing.Size(118, 45);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -43,10 +44,12 @@
             // 
             // AdminPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1574, 1129);
+            this.ClientSize = new System.Drawing.Size(787, 552);
             this.Controls.Add(this.btnBack);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(1280, 720);
             this.Name = "AdminPage";
             this.Text = "AdminPage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
