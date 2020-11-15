@@ -16,6 +16,58 @@ namespace ProjectC_JITTS
         public AddRoom()
         {
             InitializeComponent();
+
+            GetData GD = new GetData();
+
+            foreach (string location in GD.ShowLocations())
+            {
+                dropdownLocation.Items.Add(location);
+            }
+
+            dropdownLocation.Items.Add("Add new location..");
+        }
+
+        public void LockFields()
+        {
+            GetData GD = new GetData();
+            string locationname = GD.ShowLocationInfoByLocation(dropdownLocation.SelectedItem.ToString());
+
+            location_zip.ReadOnly = true;
+            location_zip.Text = dropdownLocation.SelectedItem.ToString().Substring(0,6);
+
+            location_no.ReadOnly = true;
+            location_no.Value = Int32.Parse(dropdownLocation.SelectedItem.ToString().Substring(6));
+            location_no.Controls[0].Visible = false;
+
+            location_name.ReadOnly = true;
+            location_name.Text = locationname;
+
+        }
+
+        public void UnlockFields()
+        {
+            location_zip.Text = "";
+            location_zip.ReadOnly = false;
+            location_no.Value = 0;
+            location_no.ReadOnly = false;
+            location_no.Controls[0].Visible = true;
+            location_name.Text = "";
+            location_name.ReadOnly = false;
+        }
+
+        private void dropdownLocation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dropdownLocation.SelectedIndex > -1)
+            {
+                if (dropdownLocation.SelectedItem.ToString() == "Add new location..")
+                {
+                    UnlockFields();
+                }
+                else 
+                {
+                    LockFields();
+                }
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
