@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPage));
             this.btnBack = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -62,23 +62,13 @@
             this.panel2.Size = new System.Drawing.Size(323, 554);
             this.panel2.TabIndex = 6;
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::ProjectC_JITTS.Properties.Resources.mainbg;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(745, 554);
-            this.panel1.TabIndex = 4;
-            // 
             // btnLogin
             // 
             this.btnLogin.Activecolor = System.Drawing.Color.MediumPurple;
             this.btnLogin.BackColor = System.Drawing.Color.MediumPurple;
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogin.BorderRadius = 0;
-            this.btnLogin.ButtonText = " Add user";
+            this.btnLogin.ButtonText = "          Add user";
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.DisabledColor = System.Drawing.Color.Gray;
             this.btnLogin.Iconcolor = System.Drawing.Color.Transparent;
@@ -93,16 +83,16 @@
             this.btnLogin.IconVisible = true;
             this.btnLogin.IconZoom = 60D;
             this.btnLogin.IsTab = false;
-            this.btnLogin.Location = new System.Drawing.Point(97, 365);
+            this.btnLogin.Location = new System.Drawing.Point(84, 365);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Normalcolor = System.Drawing.Color.MediumPurple;
             this.btnLogin.OnHovercolor = System.Drawing.Color.MediumPurple;
             this.btnLogin.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogin.selected = false;
-            this.btnLogin.Size = new System.Drawing.Size(139, 39);
+            this.btnLogin.Size = new System.Drawing.Size(166, 39);
             this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = " Add user";
+            this.btnLogin.Text = "          Add user";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.Textcolor = System.Drawing.Color.White;
             this.btnLogin.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,6 +121,16 @@
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(284, 25);
             this.bunifuCustomLabel2.TabIndex = 7;
             this.bunifuCustomLabel2.Text = "Catch the right wave with us!";
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::ProjectC_JITTS.Properties.Resources.mainbg;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(745, 554);
+            this.panel1.TabIndex = 4;
             // 
             // AdminPage
             // 
