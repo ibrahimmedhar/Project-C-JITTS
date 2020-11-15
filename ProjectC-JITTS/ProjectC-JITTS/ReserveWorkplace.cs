@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -38,7 +39,7 @@ namespace ProjectC_JITTS
 				"\n\nWorkplaces: " + roomInfo.Item2 + 
 				"\n\nWorkplaces left:  " + roomInfo.Item3 + 
 				"\n\nLocation Key:  " + roomInfo.Item4 +
-			"\n\nDate Selected:	" + DateTime.Parse(roomInfo.Item5).ToString("dd-MM-yyyy");
+				"\n\nDate Selected:	" + DateTime.Parse(roomInfo.Item5).ToString("dd-MM-yyyy");
 
 			LB1.MaximumSize = new Size(600, 0);
 			LB1.Location = new Point(50, 10);
@@ -55,13 +56,29 @@ namespace ProjectC_JITTS
 			{
 				// insert the reservation into the database using AddData
 				succesInsert = AD.ReserveWorkplace(GetData.LoginInfo.UserID, room_id, Int32.Parse(roomInfo.Item1), roomInfo.Item4, roomInfo.Item5);
-				
 				if (succesInsert)
                 {
 					DialogResult result = MessageBox.Show("Reservation Completed", "Dialog Title", MessageBoxButtons.OK);
 					if (result == DialogResult.OK)
 					{
-						Program.SetMail();
+						string email = GetData.LoginInfo.UserID.ToString();
+						MailMessage mail = new MailMessage();
+						SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+						mail.From = new MailAddress("projectcgroep1@gmail.com");
+						mail.To.Add(GetData.LoginInfo.UserID);
+						mail.Subject = "Confirmation of reservation";
+						mail.Body = 
+							"Your reservation has succesfully been completed: \n\n" +	
+							"Location: " + roomInfo.Item6 +
+							"\nRoom no selected: " + roomInfo.Item1 +
+							"\nLocation Key:  " + roomInfo.Item4 +
+							"\nDate Selected:	" + DateTime.Parse(roomInfo.Item5).ToString("dd-MM-yyyy"); ;
+
+						SmtpServer.Port = 587;
+						SmtpServer.Credentials = new System.Net.NetworkCredential("projectcgroep1@gmail.com", "projectc123");
+						SmtpServer.EnableSsl = true;
+						SmtpServer.Send(mail);
+						
 						this.Hide();
 						this.Close();
 					}
@@ -70,12 +87,13 @@ namespace ProjectC_JITTS
                 {
 					MessageBox.Show("Mislukt");
                 }
-				
+
 			};
 
 				this.Controls.Add(ReserveButton);
 
 			
 		}
+		
     }
 }
