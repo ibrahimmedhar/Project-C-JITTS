@@ -61,8 +61,8 @@ namespace ProjectC_JITTS
 					DialogResult result = MessageBox.Show("Reservation Completed", "Dialog Title", MessageBoxButtons.OK);
 					if (result == DialogResult.OK)
 					{
-							string email = GetData.LoginInfo.UserID.ToString();
-							MailMessage mail = new MailMessage();
+						string email = GetData.LoginInfo.UserID.ToString();
+						MailMessage mail = new MailMessage();
 							SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 							mail.From = new MailAddress("projectcgroep1@gmail.com");
 							mail.To.Add(GetData.LoginInfo.UserID);
@@ -95,7 +95,5 @@ namespace ProjectC_JITTS
 			
 		}
 		
-		
     }
-
 }

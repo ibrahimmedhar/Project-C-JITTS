@@ -20,8 +20,7 @@ namespace ProjectC_JITTS
         [STAThread]
 
         static void Main()
-   {
-           
+        { 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
@@ -60,6 +59,5 @@ namespace ProjectC_JITTS
             SmtpServer.EnableSsl = true;
             SmtpServer.Send(mail);
         }
-
     }
 }
