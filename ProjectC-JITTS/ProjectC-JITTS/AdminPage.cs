@@ -37,5 +37,12 @@ namespace ProjectC_JITTS
 			this.Hide();
 			this.Close();
         }
-    }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+			AddUser AU = new AddUser();
+				AU.ShowDialog();
+
+		}
+	}
 }

@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtPassword = new Bunifu.Framework.UI.BunifuTextbox();
             this.btnLogin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtEmail = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.alphaBlendTextBox2 = new ZBobb.AlphaBlendTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -52,22 +54,30 @@
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(558, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(744, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(242, 450);
+            this.panel1.Size = new System.Drawing.Size(323, 554);
             this.panel1.TabIndex = 2;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPassword.BackgroundImage")));
             this.txtPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.ForeColor = System.Drawing.Color.MediumPurple;
             this.txtPassword.Icon = ((System.Drawing.Image)(resources.GetObject("txtPassword.Icon")));
-            this.txtPassword.Location = new System.Drawing.Point(25, 293);
+            this.txtPassword.Location = new System.Drawing.Point(33, 361);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(194, 42);
+            this.txtPassword.Size = new System.Drawing.Size(259, 52);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.text = "password";
             // 
@@ -92,13 +102,14 @@
             this.btnLogin.IconVisible = true;
             this.btnLogin.IconZoom = 90D;
             this.btnLogin.IsTab = false;
-            this.btnLogin.Location = new System.Drawing.Point(58, 351);
+            this.btnLogin.Location = new System.Drawing.Point(91, 423);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Normalcolor = System.Drawing.Color.MediumPurple;
             this.btnLogin.OnHovercolor = System.Drawing.Color.MediumPurple;
             this.btnLogin.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogin.selected = false;
-            this.btnLogin.Size = new System.Drawing.Size(104, 32);
+            this.btnLogin.Size = new System.Drawing.Size(139, 39);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -111,11 +122,13 @@
             this.txtEmail.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtEmail.BackgroundImage")));
             this.txtEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.ForeColor = System.Drawing.Color.MediumPurple;
             this.txtEmail.Icon = ((System.Drawing.Image)(resources.GetObject("txtEmail.Icon")));
-            this.txtEmail.Location = new System.Drawing.Point(25, 236);
+            this.txtEmail.Location = new System.Drawing.Point(33, 290);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(194, 42);
+            this.txtEmail.Size = new System.Drawing.Size(259, 52);
             this.txtEmail.TabIndex = 1;
             this.txtEmail.text = "e-mail";
             // 
@@ -125,20 +138,22 @@
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel2.Controls.Add(this.bunifuCustomLabel1);
-            this.panel2.Cursor = System.Windows.Forms.Cursors.SizeNESW;
-            this.panel2.Location = new System.Drawing.Point(4, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.panel2.Location = new System.Drawing.Point(5, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(232, 151);
+            this.panel2.Size = new System.Drawing.Size(309, 186);
             this.panel2.TabIndex = 2;
             // 
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(2, 103);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(3, 127);
+            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(227, 20);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(284, 25);
             this.bunifuCustomLabel1.TabIndex = 7;
             this.bunifuCustomLabel1.Text = "Catch the right wave with us!";
             // 
@@ -146,13 +161,27 @@
             // 
             this.panel4.BackgroundImage = global::ProjectC_JITTS.Properties.Resources.mainbg;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Controls.Add(this.bunifuCustomLabel3);
             this.panel4.Controls.Add(this.bunifuCustomLabel2);
-            this.panel4.Controls.Add(this.alphaBlendTextBox2);
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(559, 448);
+            this.panel4.Size = new System.Drawing.Size(745, 551);
             this.panel4.TabIndex = 3;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(18, 367);
+            this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(594, 46);
+            this.bunifuCustomLabel3.TabIndex = 4;
+            this.bunifuCustomLabel3.Text = "This is the BLIS Digital reservation system. If you don\'t have an account yet, \r\n" +
+    "please contact your supervisor or send a mail to exaple_blis@gmail.com.";
             // 
             // bunifuCustomLabel2
             // 
@@ -160,36 +189,21 @@
             this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(3, 276);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(13, 314);
+            this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(336, 41);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(413, 50);
             this.bunifuCustomLabel2.TabIndex = 2;
             this.bunifuCustomLabel2.Text = "Welcome to Blis Digital";
             // 
-            // alphaBlendTextBox2
-            // 
-            this.alphaBlendTextBox2.BackAlpha = 0;
-            this.alphaBlendTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.alphaBlendTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.alphaBlendTextBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alphaBlendTextBox2.ForeColor = System.Drawing.SystemColors.Info;
-            this.alphaBlendTextBox2.Location = new System.Drawing.Point(10, 319);
-            this.alphaBlendTextBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.alphaBlendTextBox2.Multiline = true;
-            this.alphaBlendTextBox2.Name = "alphaBlendTextBox2";
-            this.alphaBlendTextBox2.ReadOnly = true;
-            this.alphaBlendTextBox2.Size = new System.Drawing.Size(488, 97);
-            this.alphaBlendTextBox2.TabIndex = 1;
-            this.alphaBlendTextBox2.Text = "This is the BLIS Digital reservation system. If you don\'t have an account yet, pl" +
-    "ease contact your supervisor or send a mail to exaple_blis@gmail.com.";
-            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
@@ -211,6 +225,7 @@
         private System.Windows.Forms.Panel panel4;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private ZBobb.AlphaBlendTextBox alphaBlendTextBox2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
     }
 }

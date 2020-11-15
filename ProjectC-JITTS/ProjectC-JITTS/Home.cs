@@ -59,10 +59,13 @@ namespace ProjectC_JITTS
 				AdminButton.Click += (s, p) => {
 					AP.ShowDialog();
 				};
-
-				this.Controls.Add(AdminButton);
 			}
-			
-		}
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+			AdminPage AP = new AdminPage();
+			AP.ShowDialog();
+        }
     }
 }

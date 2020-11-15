@@ -205,5 +205,23 @@
   <ItemGroup>
     <None Include="Resources\passlog2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart2644982.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kalender previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit reservation logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\make reservation icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add user icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
